@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guilherme Yan - Portfólio Futurista</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full bg-gradient-to-r from-gray-900/90 to-transparent backdrop-blur-md z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-neon-blue fade-in">Guilherme Yan</h1>
+            <!-- Ícone do menu hambúrguer -->
+            <button class="md:hidden text-neon-blue focus:outline-none" id="menu-toggle">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            <!-- Links do menu -->
+            <div class="hidden md:flex items-center space-x-6" id="nav-menu">
+                <div class="space-x-6">
+                    <a href="#home" class="nav-link hover-neon">Início</a>
+                    <a href="#about" class="nav-link hover-neon">Sobre</a>
+                    <a href="#skills" class="nav-link hover-neon">Habilidades</a>
+                    <a href="#projects" class="nav-link hover-neon">Projetos</a>
+                    <a href="#timeline" class="nav-link hover-neon">Linha do Tempo</a>
+                    <a href="#certifications" class="nav-link hover-neon">Certificações</a>
+                    <a href="#contact" class="nav-link hover-neon">Contato</a>
+                </div>
+                <!-- Social Media Icons in Navbar -->
+                <div class="flex space-x-4">
+                    <a href="https://github.com/guiyan10" target="_blank" class="social-icon github-icon" data-tooltip="Visite meu GitHub">
+                        <i class="fab fa-github text-2xl"></i>
+                        <div class="particle-burst"></div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/guilherme-yan-tec/" target="_blank" class="social-icon linkedin-icon" data-tooltip="Visite meu LinkedIn">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                        <div class="particle-burst"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Galaxy Background -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div id="galaxy-background" class="absolute inset-0 z-0"></div>
+        <div class="text-center z-10">
+            <h1 class="text-5xl md:text-7xl font-bold text-neon-blue fade-in" style="animation-delay: 0.5s;">
+                Desenvolvedor Full Stack
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mt-4 typing-effect" style="animation-delay: 1s;">
+                Moldando o futuro com tecnologia e inovação.
+            </p>
+            <a href="#skills" class="mt-8 inline-block px-8 py-4 bg-neon-blue text-white font-bold rounded-full cyber-button hover:scale-110 transition-all" style="animation-delay: 1.5s;">
+                Explore Meu Universo
+            </a>
+        </div>
+    </section>
+
+    <!-- Particles Background (a partir da seção Sobre Mim até antes do footer) -->
+    <div id="particles-js" class="absolute left-0 w-full z-0"></div>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 max-w-6xl mx-auto px-4 relative">
+        <h2 class="text-5xl font-bold text-center mb-16 text-neon-blue fade-in">Sobre Mim</h2>
+        <div class="flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2 hologram">
+                <p class="text-lg text-gray-200">
+                    Sou um apaixonado por tecnologia, dedicado a transformar ideias em soluções digitais que fazem a diferença. Com tecnologias em Front-End, Back-End e Cloud Computing, meu foco é criar sistemas robustos, escaláveis e visualmente impactantes, sempre seguindo os princípios do Clean Code.
+                </p>
+            </div>
+            <div class="md:w-1/2">
+                <div class="relative avatar-container">
+                    <img src="fotoprofissional.jpg" alt="Avatar" class="rounded-full shadow-neon hover:scale-105 transition-transform w-48 h-48 md:w-64 md:h-64">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-900/50 relative">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-5xl font-bold text-center mb-16 text-neon-blue fade-in">Habilidades</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="skill-card hover-neon-card">
+                    <h3 class="text-2xl font-semibold text-neon-blue mb-4">Front-End</h3>
+                    <ul class="text-gray-300 space-y-2">
+                        <li>HTML, CSS, JavaScript</li>
+                        <li>React.js, Angular, React Native</li>
+                        <li>Bootstrap, Tailwind CSS</li>
+                    </ul>
+                </div>
+                <div class="skill-card hover-neon-card">
+                    <h3 class="text-2xl font-semibold text-neon-blue mb-4">Back-End</h3>
+                    <ul class="text-gray-300 space-y-2">
+                        <li>PHP, Python, Laravel</li>
+                        <li>Node.js</li>
+                        <li>APIs RESTful</li>
+                    </ul>
+                </div>
+                <div class="skill-card hover-neon-card">
+                    <h3 class="text-2xl font-semibold text-neon-blue mb-4">Outras Competências</h3>
+                    <ul class="text-gray-300 space-y-2">
+                        <li>MySQL, NoSQL</li>
+                        <li>Git, GitHub, GitFlow</li>
+                        <li>AWS, Google Cloud</li>
+                        <li>Clean Code</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 max-w-6xl mx-auto px-4 relative">
+        <h2 class="text-5xl font-bold text-center mb-16 text-neon-blue fade-in">Projetos</h2>
+        <div class="project-card">
+            <h3 class="text-3xl font-semibold text-neon-blue mb-4">Vann – Transporte Escolar do Futuro</h3>
+            <p class="text-gray-200 mb-6">
+                Uma plataforma revolucionária que redefine o transporte escolar com tecnologia de ponta. Desenvolvido com a Arcis, foi destaque entre os 16 melhores projetos do SENAI e apresentado no evento Senai para o Mundo.
+            </p>
+            <ul class="text-gray-300 space-y-2 mb-6">
+                <li>Geolocalização em tempo real</li>
+                <li>Chat integrado</li>
+                <li>Busca por condutores</li>
+                <li>Painel de gestão para motoristas</li>
+                <li>Sistema de avaliação</li>
+            </ul>
+            <img src="vann.jpeg" alt="Vann" class="rounded-lg w-full shadow-neon">
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="py-20 bg-gray-900/50 relative">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-5xl font-bold text-center mb-16 text-neon-blue fade-in">Linha do Tempo</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content left">
+                        <h3 class="text-2xl font-semibold text-neon-blue">2023 - 2024 Técnico em Desenvolvimento de Sistemas (SENAI)</h3>
+                        <p class="text-gray-300">Concluí o curso técnico em Desenvolvimento de Sistemas no SENAI, adquirindo conhecimentos fundamentais em programação, desenvolvimento web e boas práticas de software.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content right">
+                        <h3 class="text-2xl font-semibold text-neon-blue">2024 - Desenvolvedor Full Stack Freelancer</h3>
+                        <p class="text-gray-300">Atuo como freelancer no desenvolvimento de soluções web personalizadas, com foco na criação de sites responsivos, otimização de performance e experiência do usuário. Tenho experiência em diversas tecnologias, como HTML, CSS, JavaScript, PHP, e frameworks modernos como React.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content left">
+                        <h3 class="text-2xl font-semibold text-neon-blue">2024 - Projeto Vann</h3>
+                        <p class="text-gray-300">Liderança no desenvolvimento do projeto Vann, selecionado entre os 16 melhores do SENAI e apresentado no evento Senai para o Mundo.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content right">
+                        <h3 class="text-2xl font-semibold text-neon-blue">2025 - Estágio de Desenvolvimento Web</h3>
+                        <p class="text-gray-300">Atuei como estagiário em desenvolvimento web, com foco em:</p>
+                        <ul class="text-gray-300 space-y-2">
+                            <li>🔹 Desenvolvimento Front-end: Criação de interfaces dinâmicas e responsivas utilizando Angular, React, Tailwind, Bootstrap, HTML, CSS e JavaScript.</li>
+                            <li>🔹 Desenvolvimento Back-end: MVC, integração e criação de APIs RESTful, Laravel e PHP.</li>
+                            <li>🔹 Manutenção e Otimização: Correção de bugs e melhorias de performance.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content left">
+                        <h3 class="text-2xl font-semibold text-neon-blue">2025 - Ensino Superior: Análise e Desenvolvimento de Sistemas</h3>
+                        <p class="text-gray-300">Concluí o curso superior em Análise e Desenvolvimento de Sistemas, aprofundando meus conhecimentos em desenvolvimento de software, arquitetura de sistemas e tecnologias modernas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 max-w-6xl mx-auto px-4 relative">
+        <h2 class="text-5xl font-bold text-center mb-16 text-neon-blue fade-in">Certificações</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="certification-card hover-neon-card">
+                <h3 class="text-2xl font-semibold text-neon-blue mb-2">
+                    <i class="fab fa-microsoft mr-2"></i> Microsoft Certified: IA gerativa responsável
+                </h3>
+                <p class="text-gray-300">Microsoft</p>
+                <p class="text-gray-400">Competências: Inteligência Artificial</p>
+            </div>
+            <div class="certification-card hover-neon-card">
+                <h3 class="text-2xl font-semibold text-neon-blue mb-2">
+                    <i class="fab fa-microsoft mr-2"></i> Microsoft Certified: Manage your work with GitHub projects
+                </h3>
+                <p class="text-gray-300">Microsoft</p>
+                <p class="text-gray-400">Competências: Git, GitHub</p>
+            </div>
+            <div class="certification-card hover-neon-card">
+                <h3 class="text-2xl font-semibold text-neon-blue mb-2">
+                    <i class="fab fa-microsoft mr-2"></i> Microsoft Certified: Microsoft Azure AI Concepts: AI Overview
+                </h3>
+                <p class="text-gray-300">Microsoft</p>
+                <p class="text-gray-400">Competências: Microsoft Azure, Machine Learning</p>
+            </div>
+            <div class="certification-card hover-neon-card">
+                <h3 class="text-2xl font-semibold text-neon-blue mb-2">
+                    <i class="fab fa-aws mr-2"></i> AWS Academy Graduate - AWS Academy Cloud Foundations
+                </h3>
+                <p class="text-gray-300">SENAI - AWS</p>
+                <p class="text-gray-400">Competências: Amazon Web Services, Computação em Nuvem</p>
+            </div>
+            <div class="certification-card hover-neon-card">
+                <h3 class="text-2xl font-semibold text-neon-blue mb-2">
+                    <i class="fab fa-microsoft mr-2"></i> Microsoft Certified: Types of Cloud Service
+                </h3>
+                <p class="text-gray-300">Microsoft</p>
+                <p class="text-gray-400">Competências: Computação em Nuvem</p>
+            </div>
+            <div class="certification-card hover-neon-card">
+                <h3 class="text-2xl font-semibold text-neon-blue mb-2">
+                    <i class="fas fa-database mr-2"></i> Tasks of a DBA
+                </h3>
+                <p class="text-gray-300">Power Tuning</p>
+                <p class="text-gray-400">Competências: Gerenciamento de Bancos de Dados</p>
+            </div>
+            <div class="certification-card hover-neon-card">
+                <h3 class="text-2xl font-semibold text-neon-blue mb-2">
+                    <i class="fas fa-shield-alt mr-2"></i> Data Protection - LPG
+                </h3>
+                <p class="text-gray-300">SENAI</p>
+                <p class="text-gray-400">Competências: Cibersegurança, Suporte ao Usuário Remoto, Segurança de Rede, LGPD</p>
+            </div>
+            <div class="certification-card hover-neon-card">
+                <h3 class="text-2xl font-semibold text-neon-blue mb-2">
+                    <i class="fab fa-google mr-2"></i> Google Cloud Foundations
+                </h3>
+                <p class="text-gray-300">SENAI</p>
+                <p class="text-gray-400">Competências: Computação em Nuvem</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-900/50 text-center relative">
+        <h2 class="text-5xl font-bold mb-12 text-neon-blue fade-in">Contato</h2>
+        <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+            Vamos criar algo extraordinário juntos? Entre em contato!
+        </p>
+        <a href="https://api.whatsapp.com/send/?phone=5512991293155&text=Olá%20Guilherme%20Yan&type=phone_number&app_absent=0" class="inline-block px-8 py-4 bg-neon-blue text-white font-bold rounded-full cyber-button hover:scale-110 transition-all">Enviar Mensagem</a>
+        <!-- Social Media Icons -->
+        <div class="mt-8 flex justify-center space-x-6">
+            <a href="https://github.com/guiyan10" target="_blank" class="social-icon github-icon" data-tooltip="Visite meu GitHub">
+                <i class="fab fa-github text-4xl"></i>
+                <div class="particle-burst"></div>
+            </a>
+            <a href="https://www.linkedin.com/in/guilherme-yan-tec/" target="_blank" class="social-icon linkedin-icon" data-tooltip="Visite meu LinkedIn">
+                <i class="fab fa-linkedin text-4xl"></i>
+                <div class="particle-burst"></div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 bg-gray-900 text-center text-gray-400 relative z-10">
+        <p>© 2025 Guilherme Yan. Um futuro codificado com paixão.</p>
+    </footer>
+
+    <!-- Ícone fixo do WhatsApp -->
+    <a href="https://api.whatsapp.com/send/?phone=5512991293155&text=Olá%20Guilherme%20Yan&type=phone_number&app_absent=0" 
+       target="_blank" 
+       class="whatsapp-fixed">
+        <i class="fab fa-whatsapp text-4xl"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>

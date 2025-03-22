@@ -1,0 +1,533 @@
+/* Estilos Futuristas */
+:root {
+    --neon-blue: #4DA8DA;
+    --neon-purple: #A855F7;
+    --neon-shadow: 0 0 10px #4DA8DA, 0 0 20px #4DA8DA, 0 0 30px #4DA8DA;
+    --neon-pink: #FF70A6;
+    --neon-pink-shadow: 0 0 10px #FF70A6, 0 0 20px #FF70A6, 0 0 30px #FF70A6;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #0d1117, #1a1e26);
+    color: #e2e8f0;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Ajuste para garantir que o conteúdo ocupe o espaço necessário */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Faz o conteúdo principal crescer para ocupar o espaço disponível */
+main {
+    flex: 1 0 auto;
+}
+
+/* Garante que o footer fique no final da página */
+footer {
+    flex-shrink: 0;
+}
+
+/* Galaxy Background for Hero Section */
+#galaxy-background {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(circle at center, rgba(77, 168, 218, 0.1) 0%, transparent 70%);
+    overflow: hidden;
+}
+#galaxy-background::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png');
+    opacity: 0.3;
+    animation: galaxy-rotate 100s linear infinite;
+}
+#galaxy-background::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+    animation: galaxy-pulse 10s ease-in-out infinite;
+}
+
+/* Particles Background */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* Fade-In Animation */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in forwards;
+}
+
+/* Typing Effect */
+.typing-effect {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid var(--neon-blue);
+    animation: typing 4s steps(40, end) forwards, blink 0.75s step-end infinite;
+}
+
+/* Hologram Effect */
+.hologram {
+    position: relative;
+    animation: hologram 3s infinite ease-in-out;
+}
+.hologram::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--neon-blue);
+    opacity: 0.5;
+    animation: scan 3s infinite;
+}
+
+/* Skill Card */
+.skill-card {
+    background: rgba(17, 24, 39, 0.8);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--neon-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Project Card */
+.project-card {
+    background: rgba(17, 24, 39, 0.9);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--neon-shadow);
+}
+
+/* Certification Card */
+.certification-card {
+    background: rgba(17, 24, 39, 0.8);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: var(--neon-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Cyber Button */
+.cyber-button {
+    position: relative;
+    box-shadow: inset 0 0 10px var(--neon-blue);
+    animation: pulse 2s infinite;
+}
+
+/* Avatar (sem rotação) */
+.avatar-container img {
+    border: 2px solid var(--neon-blue);
+}
+
+/* Hover Effects */
+.hover-neon {
+    position: relative;
+    color: #e2e8f0;
+    transition: color 0.3s ease;
+}
+.hover-neon::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--neon-blue);
+    transition: width 0.3s ease;
+}
+.hover-neon:hover {
+    color: var(--neon-blue);
+}
+.hover-neon:hover::after {
+    width: 100%;
+}
+
+.hover-neon-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-neon-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--neon-pink-shadow);
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    padding: 20px 0;
+}
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: var(--neon-blue);
+    opacity: 0.3;
+}
+.timeline-item {
+    position: relative;
+    margin: 40px 0;
+}
+.timeline-content {
+    width: 45%;
+    padding: 20px;
+    background: rgba(17, 24, 39, 0.9);
+    border-radius: 10px;
+    box-shadow: var(--neon-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.timeline-content:hover {
+    transform: scale(1.05);
+    box-shadow: var(--neon-pink-shadow);
+}
+.timeline-content.left {
+    margin-right: 55%;
+}
+.timeline-content.right {
+    margin-left: 55%;
+}
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+    background: var(--neon-blue);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--neon-blue);
+}
+.timeline-content.left::before {
+    right: -10px;
+}
+.timeline-content.right::before {
+    left: -10px;
+}
+
+/* Social Media Icons */
+.social-icon {
+    position: relative;
+    color: #e2e8f0;
+    transition: transform 0.3s ease, color 0.3s ease;
+    animation: pulse-icon 2s infinite;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+}
+
+.github-icon:hover {
+    color: var(--neon-blue);
+    text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+}
+
+.linkedin-icon:hover {
+    color: var(--neon-purple);
+    text-shadow: 0 0 10px var(--neon-purple), 0 0 20px var(--neon-purple);
+}
+
+/* Tooltip */
+.social-icon::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(17, 24, 39, 0.9);
+    color: #e2e8f0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.social-icon:hover::after {
+    opacity: 1;
+}
+
+/* Particle Burst Effect on Click */
+.particle-burst {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.social-icon:active .particle-burst::before,
+.social-icon:active .particle-burst::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: burst 0.5s ease-out forwards;
+}
+
+.social-icon.github-icon:active .particle-burst::before,
+.social-icon.github-icon:active .particle-burst::after {
+    background: var(--neon-blue);
+}
+
+.social-icon.linkedin-icon:active .particle-burst::before,
+.social-icon.linkedin-icon:active .particle-burst::after {
+    background: var(--neon-purple);
+}
+
+.social-icon:active .particle-burst::before {
+    animation: burst-left 0.5s ease-out forwards;
+}
+
+.social-icon:active .particle-burst::after {
+    animation: burst-right 0.5s ease-out forwards;
+}
+
+/* Ícone fixo do WhatsApp */
+.whatsapp-fixed {
+    position: fixed;
+    bottom: 30px;
+    right: 40px;
+    background: var(--neon-blue);
+    padding: 20px;
+    border-radius: 40%;
+    box-shadow: var(--neon-shadow);
+    color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+}
+
+.whatsapp-fixed:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px var(--neon-blue), 0 0 25px var(--neon-blue);
+}
+
+/* Ajustes para o menu toggle */
+#nav-menu {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Estilo do menu em telas menores */
+@media (max-width: 767px) {
+    #nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(17, 24, 39, 0.95);
+        flex-direction: column;
+        padding: 1rem;
+        display: none;
+        align-items: center ;
+    }
+
+    #nav-menu.active {
+        display: flex;
+    }
+
+    #nav-menu .space-x-6 {
+        flex-direction: column;
+        margin-bottom: 1rem;
+    }
+
+    #nav-menu .space-x-6 a {
+        display: block;
+        padding: 0.5rem 0;
+        text-align: center;
+    }
+
+    #nav-menu .flex.space-x-4 {
+        justify-content: center;
+    }
+}
+
+/* Ajustes gerais para responsividade */
+
+/* Hero Section */
+@media (max-width: 640px) {
+    #home h1 {
+        font-size: 2.5rem;
+    }
+    #home p {
+        font-size: 1rem;
+    }
+    #home .cyber-button {
+        padding: 0.5rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* About Section */
+@media (max-width: 768px) {
+    #about .flex {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+    #about .md\:w-1\/2 {
+        width: 100%;
+    }
+    #about .avatar-container img {
+        width: 12rem;
+        height: 12rem;
+        display: none;
+    }
+}
+
+/* Skills Section */
+@media (max-width: 768px) {
+    #skills .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Projects Section */
+@media (max-width: 640px) {
+    #projects .project-card {
+        padding: 1rem;
+    }
+    #projects h3 {
+        font-size: 1.5rem;
+    }
+    #projects p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Timeline Section */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 20px;
+    }
+    .timeline-item {
+        margin: 20px 0;
+    }
+    .timeline-content {
+        width: 100%;
+        margin: 0 !important;
+        padding-left: 50px;
+    }
+    .timeline-content.left,
+    .timeline-content.right {
+        margin-left: 0 !important;
+    }
+    .timeline-content::before {
+        left: 10px !important;
+        right: auto !important;
+    }
+}
+
+/* Certifications Section */
+@media (max-width: 768px) {
+    #certifications .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Contact Section */
+@media (max-width: 640px) {
+    #contact h2 {
+        font-size: 2.5rem;
+    }
+    #contact p {
+        font-size: 1rem;
+    }
+    #contact .cyber-button {
+        padding: 0.5rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Ajuste para o ícone fixo do WhatsApp em telas menores */
+@media (max-width: 640px) {
+    .whatsapp-fixed {
+        bottom: 15px;
+        right: 15px;
+        padding: 10px;
+    }
+    .whatsapp-fixed i {
+        font-size: 1.5rem;
+    }
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+@keyframes blink {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--neon-blue); }
+}
+@keyframes hologram {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+}
+@keyframes scan {
+    0% { top: -10px; }
+    50% { top: 100%; }
+    100% { top: -10px; }
+}
+@keyframes pulse {
+    0%, 100% { box-shadow: inset 0 0 10px var(--neon-blue); }
+    50% { box-shadow: inset 0 0 20px var(--neon-blue); }
+}
+@keyframes pulse-icon {
+    0%, 100% { text-shadow: 0 0 5px rgba(77, 168, 218, 0.5); }
+    50% { text-shadow: 0 0 15px rgba(77, 168, 218, 0.8); }
+}
+@keyframes galaxy-rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+@keyframes galaxy-pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+}
+@keyframes burst {
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(2); opacity: 0; }
+}
+@keyframes burst-left {
+    0% { transform: translate(0, 0) scale(0); opacity: 1; }
+    100% { transform: translate(-20px, -20px) scale(1); opacity: 0; }
+}
+@keyframes burst-right {
+    0% { transform: translate(0, 0) scale(0); opacity: 1; }
+    100% { transform: translate(20px, 20px) scale(1); opacity: 0; }
+}
+
+/* Custom Tailwind Classes */
+.text-neon-blue {
+    color: var(--neon-blue);
+}
+.shadow-neon {
+    box-shadow: var(--neon-shadow);
+}
