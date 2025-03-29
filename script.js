@@ -72,10 +72,11 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
         if (target) {
             // Fechar menu mobile se estiver aberto
             if (menuOpen) toggleMobileMenu();
-            
-            window.scrollTo({
-                top: target.offsetTop,
-                behavior: 'smooth'
+
+            // Rolagem suave para a seção
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start' // Garante que a seção fique visível no topo
             });
         }
     });
@@ -290,12 +291,27 @@ if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
         
-        // Aqui você pode adicionar a lógica para enviar o formulário
-        // Por exemplo, usando fetch para enviar para um backend
-        
         // Simulação de envio bem-sucedido
         const name = document.getElementById('name').value;
-        alert(`Obrigado ${name}! Sua mensagem foi enviada com sucesso.`);
+
+        // Exibir alerta personalizado
+        showCustomAlert(`Obrigado, ${name}! Sua mensagem foi enviada com sucesso.`);
+        
         contactForm.reset();
     });
+}
+
+// Função para exibir alerta personalizado
+function showCustomAlert(message) {
+    const alertBox = document.createElement('div');
+    alertBox.className = 'custom-alert';
+    alertBox.textContent = message;
+
+    document.body.appendChild(alertBox);
+
+    // Remover o alerta após 3 segundos
+    setTimeout(() => {
+        alertBox.style.opacity = '0';
+        setTimeout(() => alertBox.remove(), 500);
+    }, 3000);
 }

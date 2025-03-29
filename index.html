@@ -1,922 +1,958 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guilherme Yan - Portfólio Futurista</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        "neon-blue": "#4DA8DA",
-                        "neon-purple": "#A855F7",
-                        "neon-pink": "#FF70A6",
-                        "neon-cyan": "#22D3EE",
-                        "deep-space": "#0F172A",
-                        "space-blue": "#1E293B"
-                    },
-                    fontFamily: {
-                        'orbitron': ['Orbitron', 'sans-serif'],
-                        'montserrat': ['Montserrat', 'sans-serif']
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'glow': 'glow 2s ease-in-out infinite alternate'
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' }
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Guilherme Yan - Portfólio Futurista</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            "neon-blue": "#4DA8DA",
+                            "neon-purple": "#A855F7",
+                            "neon-pink": "#FF70A6",
+                            "neon-cyan": "#22D3EE",
+                            "deep-space": "#0F172A",
+                            "space-blue": "#1E293B"
                         },
-                        glow: {
-                            '0%': { boxShadow: '0 0 5px rgba(77, 168, 218, 0.5), 0 0 10px rgba(77, 168, 218, 0.3)' },
-                            '100%': { boxShadow: '0 0 10px rgba(77, 168, 218, 0.8), 0 0 20px rgba(77, 168, 218, 0.5), 0 0 30px rgba(77, 168, 218, 0.3)' }
+                        fontFamily: {
+                            'orbitron': ['Orbitron', 'sans-serif'],
+                            'montserrat': ['Montserrat', 'sans-serif']
+                        },
+                        animation: {
+                            'float': 'float 6s ease-in-out infinite',
+                            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                            'glow': 'glow 2s ease-in-out infinite alternate'
+                        },
+                        keyframes: {
+                            float: {
+                                '0%, 100%': { transform: 'translateY(0)' },
+                                '50%': { transform: 'translateY(-20px)' }
+                            },
+                            glow: {
+                                '0%': { boxShadow: '0 0 5px rgba(77, 168, 218, 0.5), 0 0 10px rgba(77, 168, 218, 0.3)' },
+                                '100%': { boxShadow: '0 0 10px rgba(77, 168, 218, 0.8), 0 0 20px rgba(77, 168, 218, 0.5), 0 0 30px rgba(77, 168, 218, 0.3)' }
+                            }
                         }
                     }
                 }
             }
-        }
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body class="font-montserrat bg-black text-white overflow-x-hidden">
-    <!-- Preloader -->
-    <div id="preloader" class="fixed inset-0 z-[9999] flex items-center justify-center bg-black">
-        <div class="relative">
-            <div class="w-16 h-16 border-4 border-neon-blue rounded-full animate-spin border-t-transparent"></div>
-            <div class="absolute top-0 left-0 w-16 h-16 border-4 border-neon-purple rounded-full animate-pulse opacity-50"></div>
-        </div>
-    </div>
-
-    <!-- Navbar -->
-    <nav class="fixed top-0 w-full bg-gradient-to-r from-black/90 to-transparent backdrop-blur-md z-50 transition-all duration-500" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="relative group">
-                <h1 class="text-2xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">Guilherme Yan</h1>
-                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-neon-blue to-neon-purple transition-all duration-300 group-hover:w-full"></span>
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
+    <body class="font-montserrat bg-black text-white overflow-x-hidden">
+        <!-- Preloader -->
+        <div id="preloader" class="fixed inset-0 z-[9999] flex items-center justify-center bg-black">
+            <div class="relative">
+                <div class="w-16 h-16 border-4 border-neon-blue rounded-full animate-spin border-t-transparent"></div>
+                <div class="absolute top-0 left-0 w-16 h-16 border-4 border-neon-purple rounded-full animate-pulse opacity-50"></div>
             </div>
-            
-            <!-- Ícone do menu hambúrguer -->
-            <button class="md:hidden focus:outline-none z-50" id="menu-toggle">
-                <div class="w-6 h-0.5 bg-gradient-to-r from-neon-blue to-neon-purple mb-1.5 transition-all duration-300 ease-in-out transform origin-center" id="line1"></div>
-                <div class="w-6 h-0.5 bg-gradient-to-r from-neon-blue to-neon-purple mb-1.5 transition-all duration-300 ease-in-out" id="line2"></div>
-                <div class="w-6 h-0.5 bg-gradient-to-r from-neon-blue to-neon-purple transition-all duration-300 ease-in-out transform origin-center" id="line3"></div>
-            </button>
-            
-            <!-- Links do menu -->
-            <div class="hidden md:flex items-center space-x-6" id="nav-menu">
-                <div class="space-x-6">
-                    <a href="#home" class="nav-link relative px-2 py-1 text-gray-300 hover:text-white transition-colors duration-300" data-section="home">Início</a>
-                    <a href="#about" class="nav-link relative px-2 py-1 text-gray-300 hover:text-white transition-colors duration-300" data-section="about">Sobre</a>
-                    <a href="#skills" class="nav-link relative px-2 py-1 text-gray-300 hover:text-white transition-colors duration-300" data-section="skills">Habilidades</a>
-                    <a href="#projects" class="nav-link relative px-2 py-1 text-gray-300 hover:text-white transition-colors duration-300" data-section="projects">Projetos</a>
-                    <a href="#timeline" class="nav-link relative px-2 py-1 text-gray-300 hover:text-white transition-colors duration-300" data-section="timeline">Linha do Tempo</a>
-                    <a href="#certifications" class="nav-link relative px-2 py-1 text-gray-300 hover:text-white transition-colors duration-300" data-section="certifications">Certificações</a>
-                    <a href="#contact" class="nav-link relative px-2 py-1 text-gray-300 hover:text-white transition-colors duration-300" data-section="contact">Contato</a>
+        </div>
+
+        <!-- Navbar -->
+        <nav class="fixed top-0 w-full bg-gradient-to-r from-black/90 to-transparent backdrop-blur-md z-50 transition-all duration-500" id="navbar">
+            <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+                <div class="relative group">
+                    <h1 class="text-2xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">Guilherme Yan</h1>
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-neon-blue to-neon-purple transition-all duration-300 group-hover:w-full"></span>
                 </div>
                 
-                <!-- Social Media Icons in Navbar -->
-                <div class="flex space-x-4">
-                    <a href="https://github.com/guiyan10" target="_blank" class="social-icon github-icon group" data-tooltip="Visite meu GitHub">
-                        <i class="fab fa-github text-2xl text-gray-300 group-hover:text-neon-blue transition-colors duration-300"></i>
-                        <div class="particle-burst"></div>
+                <!-- Ícone do menu hambúrguer -->
+                <button class="md:hidden focus:outline-none z-50" id="menu-toggle">
+                    <div class="w-6 h-0.5 bg-gradient-to-r from-neon-blue to-neon-purple mb-1.5 transition-all duration-300 ease-in-out transform origin-center" id="line1"></div>
+                    <div class="w-6 h-0.5 bg-gradient-to-r from-neon-blue to-neon-purple mb-1.5 transition-all duration-300 ease-in-out" id="line2"></div>
+                    <div class="w-6 h-0.5 bg-gradient-to-r from-neon-blue to-neon-purple transition-all duration-300 ease-in-out transform origin-center" id="line3"></div>
+                </button>
+                
+                <!-- Links do menu -->
+                <div class="hidden md:flex items-center space-x-6" id="nav-menu">
+                    <div class="space-x-6">
+                        <a href="#home" class="nav-link relative px-2 py-1 text-gray-300 hover:text-white transition-colors duration-300" data-section="home">Início</a>
+                        <a href="#about" class="nav-link relative px-2 py-1 text-gray-300 hover:text-white transition-colors duration-300" data-section="about">Sobre</a>
+                        <a href="#skills" class="nav-link relative px-2 py-1 text-gray-300 hover:text-white transition-colors duration-300" data-section="skills">Habilidades</a>
+                        <a href="#projects" class="nav-link relative px-2 py-1 text-gray-300 hover:text-white transition-colors duration-300" data-section="projects">Projetos</a>
+                        <a href="#timeline" class="nav-link relative px-2 py-1 text-gray-300 hover:text-white transition-colors duration-300" data-section="timeline">Linha do Tempo</a>
+                        <a href="#certifications" class="nav-link relative px-2 py-1 text-gray-300 hover:text-white transition-colors duration-300" data-section="certifications">Certificações</a>
+                        <a href="#contact" class="nav-link relative px-2 py-1 text-gray-300 hover:text-white transition-colors duration-300" data-section="contact">Contato</a>
+                    </div>
+                    
+                    <!-- Social Media Icons in Navbar -->
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/guiyan10" target="_blank" class="social-icon github-icon group" data-tooltip="Visite meu GitHub">
+                            <i class="fab fa-github text-2xl text-gray-300 group-hover:text-neon-blue transition-colors duration-300"></i>
+                            <div class="particle-burst"></div>
+                        </a>
+                        <a href="https://www.linkedin.com/in/guilherme-yan-tec/" target="_blank" class="social-icon linkedin-icon group" data-tooltip="Visite meu LinkedIn">
+                            <i class="fab fa-linkedin text-2xl text-gray-300 group-hover:text-neon-purple transition-colors duration-300"></i>
+                            <div class="particle-burst"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="fixed inset-0 bg-black/95 backdrop-blur-md z-40 flex items-center justify-center transform translate-x-full transition-transform duration-500">
+            <div class="flex flex-col items-center space-y-6">
+                <a href="#home" class="mobile-nav-link text-2xl font-orbitron text-gray-300 hover:text-neon-blue transition-colors duration-300">Início</a>
+                <a href="#about" class="mobile-nav-link text-2xl font-orbitron text-gray-300 hover:text-neon-blue transition-colors duration-300">Sobre</a>
+                <a href="#skills" class="mobile-nav-link text-2xl font-orbitron text-gray-300 hover:text-neon-blue transition-colors duration-300">Habilidades</a>
+                <a href="#projects" class="mobile-nav-link text-2xl font-orbitron text-gray-300 hover:text-neon-blue transition-colors duration-300">Projetos</a>
+                <a href="#timeline" class="mobile-nav-link text-2xl font-orbitron text-gray-300 hover:text-neon-blue transition-colors duration-300">Linha do Tempo</a>
+                <a href="#certifications" class="mobile-nav-link text-2xl font-orbitron text-gray-300 hover:text-neon-blue transition-colors duration-300">Certificações</a>
+                <a href="#contact" class="mobile-nav-link text-2xl font-orbitron text-gray-300 hover:text-neon-blue transition-colors duration-300">Contato</a>
+                
+                <div class="flex space-x-6 mt-8">
+                    <a href="https://github.com/guiyan10" target="_blank" class="social-icon github-icon">
+                        <i class="fab fa-github text-3xl text-gray-300 hover:text-neon-blue transition-colors duration-300"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/guilherme-yan-tec/" target="_blank" class="social-icon linkedin-icon group" data-tooltip="Visite meu LinkedIn">
-                        <i class="fab fa-linkedin text-2xl text-gray-300 group-hover:text-neon-purple transition-colors duration-300"></i>
-                        <div class="particle-burst"></div>
+                    <a href="https://www.linkedin.com/in/guilherme-yan-tec/" target="_blank" class="social-icon linkedin-icon">
+                        <i class="fab fa-linkedin text-3xl text-gray-300 hover:text-neon-purple transition-colors duration-300"></i>
                     </a>
                 </div>
             </div>
         </div>
-    </nav>
 
-    <!-- Menu Mobile -->
-    <div id="mobile-menu" class="fixed inset-0 bg-black/95 backdrop-blur-md z-40 flex items-center justify-center transform translate-x-full transition-transform duration-500">
-        <div class="flex flex-col items-center space-y-6">
-            <a href="#home" class="mobile-nav-link text-2xl font-orbitron text-gray-300 hover:text-neon-blue transition-colors duration-300">Início</a>
-            <a href="#about" class="mobile-nav-link text-2xl font-orbitron text-gray-300 hover:text-neon-blue transition-colors duration-300">Sobre</a>
-            <a href="#skills" class="mobile-nav-link text-2xl font-orbitron text-gray-300 hover:text-neon-blue transition-colors duration-300">Habilidades</a>
-            <a href="#projects" class="mobile-nav-link text-2xl font-orbitron text-gray-300 hover:text-neon-blue transition-colors duration-300">Projetos</a>
-            <a href="#timeline" class="mobile-nav-link text-2xl font-orbitron text-gray-300 hover:text-neon-blue transition-colors duration-300">Linha do Tempo</a>
-            <a href="#certifications" class="mobile-nav-link text-2xl font-orbitron text-gray-300 hover:text-neon-blue transition-colors duration-300">Certificações</a>
-            <a href="#contact" class="mobile-nav-link text-2xl font-orbitron text-gray-300 hover:text-neon-blue transition-colors duration-300">Contato</a>
+        <!-- Hero Section with 3D Space Background -->
+        <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+            <canvas id="space-scene" class="absolute inset-0 z-0"></canvas>
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black z-0"></div>
             
-            <div class="flex space-x-6 mt-8">
-                <a href="https://github.com/guiyan10" target="_blank" class="social-icon github-icon">
-                    <i class="fab fa-github text-3xl text-gray-300 hover:text-neon-blue transition-colors duration-300"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/guilherme-yan-tec/" target="_blank" class="social-icon linkedin-icon">
-                    <i class="fab fa-linkedin text-3xl text-gray-300 hover:text-neon-purple transition-colors duration-300"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Hero Section with 3D Space Background -->
-    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
-        <canvas id="space-scene" class="absolute inset-0 z-0"></canvas>
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black z-0"></div>
-        
-        <div class="text-center z-10 px-4 reveal-element">
-            <div class="mb-4 reveal-element" data-delay="200">
-                <span class="px-4 py-1 rounded-full text-sm font-medium bg-gradient-to-r from-neon-blue/20 to-neon-purple/20 border border-neon-blue/30 text-neon-blue inline-block">
-                    Desenvolvedor Full Stack
-                </span>
-            </div>
-            
-            <h1 class="text-5xl md:text-7xl font-bold font-orbitron mb-6 reveal-element" data-delay="400">
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-white to-neon-purple">
-                    Guilherme Yan
-                </span>
-            </h1>
-            
-            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto reveal-element typing-effect" data-delay="600">
-                Moldando o futuro com tecnologia e inovação.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal-element" data-delay="800">
-                <a href="#projects" class="px-8 py-4 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple text-white font-medium hover:shadow-glow transition-all duration-300 transform hover:scale-105 cyber-button">
-                    Ver Projetos
-                </a>
-                <a href="#contact" class="px-8 py-4 rounded-full bg-transparent border border-neon-blue/50 text-white font-medium hover:bg-neon-blue/10 transition-all duration-300">
-                    Entre em Contato
-                </a>
-            </div>
-        </div>
-        
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 cursor-pointer animate-bounce z-10">
-            <a href="#about" class="text-white hover:text-neon-blue transition-colors duration-300">
-                <i class="fas fa-chevron-down text-2xl"></i>
-            </a>
-        </div>
-    </section>
-
-    <!-- Particles Background (a partir da seção Sobre Mim até antes do footer) -->
-    <div id="particles-js" class="fixed inset-0 z-0 pointer-events-none"></div>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 relative z-10">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center mb-16 reveal-element">
-                <h2 class="text-4xl md:text-5xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">
-                    Sobre Mim
-                </h2>
-                <div class="mt-2 h-1 w-20 bg-gradient-to-r from-neon-blue to-neon-purple mx-auto rounded-full"></div>
-            </div>
-            
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="md:w-1/2 reveal-element" data-direction="left">
-                    <div class="p-1 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple shadow-glow">
-                        <div class="rounded-full overflow-hidden bg-black p-1">
-                            <div class="aspect-square relative overflow-hidden rounded-full">
-                                <img src="fotoprofissional.jpg" alt="Guilherme Yan" class="object-cover w-full h-full">
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                                <div class="absolute inset-0 border-t border-l border-r border-white/20 rounded-full"></div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="text-center z-10 px-4 reveal-element">
+                <div class="mb-4 reveal-element" data-delay="200">
+                    <span class="px-4 py-1 rounded-full text-sm font-medium bg-gradient-to-r from-neon-blue/20 to-neon-purple/20 border border-neon-blue/30 text-neon-blue inline-block">
+                        Desenvolvedor Full Stack
+                    </span>
                 </div>
                 
-                <div class="md:w-1/2 reveal-element" data-direction="right">
-                    <div class="space-y-6">
-                        <div class="relative">
-                            <div class="absolute -left-4 top-0 h-full w-0.5 bg-gradient-to-b from-neon-blue to-neon-purple"></div>
-                            <h3 class="text-2xl font-bold font-orbitron text-white mb-4">Desenvolvedor Full Stack</h3>
-                            <p class="text-gray-300 leading-relaxed">
-                                Sou um apaixonado por tecnologia, dedicado a transformar ideias em soluções digitais que fazem a diferença. Com tecnologias em Front-End, Back-End e Cloud Computing, meu foco é criar sistemas robustos, escaláveis e visualmente impactantes, sempre seguindo os princípios do Clean Code.
-                            </p>
-                        </div>
-                        
-                        <div class="grid grid-cols-2 gap-4 mt-6">
-                            <div class="flex items-center gap-2">
-                                <div class="w-2 h-2 rounded-full bg-neon-blue"></div>
-                                <span class="text-gray-300">Desenvolvimento Web</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <div class="w-2 h-2 rounded-full bg-neon-purple"></div>
-                                <span class="text-gray-300">Aplicações Móveis</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <div class="w-2 h-2 rounded-full bg-neon-blue"></div>
-                                <span class="text-gray-300">Cloud Computing</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <div class="w-2 h-2 rounded-full bg-neon-purple"></div>
-                                <span class="text-gray-300">Clean Code</span>
-                            </div>
-                        </div>
-                    </div>
+                <h1 class="text-5xl md:text-7xl font-bold font-orbitron mb-6 reveal-element" data-delay="400">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-white to-neon-purple">
+                        Guilherme Yan
+                    </span>
+                </h1>
+                
+                <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto reveal-element typing-effect" data-delay="600">
+                    Moldando o futuro com tecnologia e inovação.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal-element" data-delay="800">
+                    <a href="#projects" class="px-8 py-4 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple text-white font-medium hover:shadow-glow transition-all duration-300 transform hover:scale-105 cyber-button">
+                        Ver Projetos
+                    </a>
+                    <a href="https://api.whatsapp.com/send/?phone=5512991293155&text=Gostaria%20de%20um%20orçamento%20para%20um%20projeto&type=phone_number&app_absent=0" class="px-8 py-4 rounded-full bg-transparent border border-neon-blue/50 text-white font-medium hover:bg-neon-blue/10 transition-all duration-300">
+                        Entre em Contato
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-space-blue/30 relative z-10">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center mb-16 reveal-element">
-                <h2 class="text-4xl md:text-5xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">
-                    Habilidades
-                </h2>
-                <div class="mt-2 h-1 w-20 bg-gradient-to-r from-neon-blue to-neon-purple mx-auto rounded-full"></div>
-            </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Front-End Skills -->
-                <div class="skill-card group reveal-element" data-delay="100">
-                    <div class="absolute inset-0 bg-gradient-to-br from-neon-blue/20 to-neon-blue/5 rounded-xl transition-all duration-300 group-hover:opacity-100 opacity-50"></div>
-                    <div class="relative p-6">
-                        <div class="flex items-center gap-3 mb-6">
-                            <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-neon-blue/20 to-neon-blue/10 flex items-center justify-center border border-neon-blue/30 group-hover:shadow-glow transition-all duration-300">
-                                <i class="fas fa-code text-neon-blue"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold font-orbitron text-white">Front-End</h3>
-                        </div>
-                        
-                        <ul class="space-y-3">
-                            <li class="flex items-start gap-2">
-                                <span class="text-neon-blue mt-1">•</span>
-                                <span class="text-gray-300">HTML, CSS, JavaScript</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-neon-blue mt-1">•</span>
-                                <span class="text-gray-300">React.js, Angular, React Native</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-neon-blue mt-1">•</span>
-                                <span class="text-gray-300">Bootstrap, Tailwind CSS</span>
-                            </li>
-                        </ul>
-                    </div>
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 cursor-pointer animate-bounce z-10">
+                <a href="#about" class="text-white hover:text-neon-blue transition-colors duration-300">
+                    <i class="fas fa-chevron-down text-2xl"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Particles Background (a partir da seção Sobre Mim até antes do footer) -->
+        <div id="particles-js" class="fixed inset-0 z-0 pointer-events-none"></div>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 relative z-10">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="text-center mb-16 reveal-element">
+                    <h2 class="text-4xl md:text-5xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">
+                        Sobre Mim
+                    </h2>
+                    <div class="mt-2 h-1 w-20 bg-gradient-to-r from-neon-blue to-neon-purple mx-auto rounded-full"></div>
                 </div>
                 
-                <!-- Back-End Skills -->
-                <div class="skill-card group reveal-element" data-delay="300">
-                    <div class="absolute inset-0 bg-gradient-to-br from-neon-purple/20 to-neon-purple/5 rounded-xl transition-all duration-300 group-hover:opacity-100 opacity-50"></div>
-                    <div class="relative p-6">
-                        <div class="flex items-center gap-3 mb-6">
-                            <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-neon-purple/20 to-neon-purple/10 flex items-center justify-center border border-neon-purple/30 group-hover:shadow-glow-purple transition-all duration-300">
-                                <i class="fas fa-server text-neon-purple"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold font-orbitron text-white">Back-End</h3>
-                        </div>
-                        
-                        <ul class="space-y-3">
-                            <li class="flex items-start gap-2">
-                                <span class="text-neon-purple mt-1">•</span>
-                                <span class="text-gray-300">PHP, Python, Laravel</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-neon-purple mt-1">•</span>
-                                <span class="text-gray-300">Node.js</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-neon-purple mt-1">•</span>
-                                <span class="text-gray-300">APIs RESTful</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Other Skills -->
-                <div class="skill-card group reveal-element" data-delay="500">
-                    <div class="absolute inset-0 bg-gradient-to-br from-neon-cyan/20 to-neon-cyan/5 rounded-xl transition-all duration-300 group-hover:opacity-100 opacity-50"></div>
-                    <div class="relative p-6">
-                        <div class="flex items-center gap-3 mb-6">
-                            <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-neon-cyan/20 to-neon-cyan/10 flex items-center justify-center border border-neon-cyan/30 group-hover:shadow-glow-cyan transition-all duration-300">
-                                <i class="fas fa-database text-neon-cyan"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold font-orbitron text-white">Outras Competências</h3>
-                        </div>
-                        
-                        <ul class="space-y-3">
-                            <li class="flex items-start gap-2">
-                                <span class="text-neon-cyan mt-1">•</span>
-                                <span class="text-gray-300">MySQL, NoSQL</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-neon-cyan mt-1">•</span>
-                                <span class="text-gray-300">Git, GitHub, GitFlow</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-neon-cyan mt-1">•</span>
-                                <span class="text-gray-300">AWS, Google Cloud</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-neon-cyan mt-1">•</span>
-                                <span class="text-gray-300">Clean Code</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="mt-16 reveal-element" data-delay="600">
-                <div class="relative overflow-hidden rounded-xl border border-neon-purple/20 bg-black/50 backdrop-blur-sm">
-                    <div class="absolute inset-0 bg-gradient-to-r from-neon-blue/10 to-neon-purple/10"></div>
-                    <div class="relative p-8">
-                        <h3 class="text-2xl font-bold font-orbitron text-white mb-6">Tecnologias</h3>
-                        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
-                            <!-- Tech Icons -->
-                            <div class="tech-icon">
-                                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center mb-2 border border-neon-purple/30 group-hover:shadow-glow transition-all duration-300">
-                                    <i class="fab fa-react text-2xl text-neon-blue"></i>
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2 reveal-element" data-direction="left">
+                        <div class="p-1 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple shadow-glow">
+                            <div class="rounded-full overflow-hidden bg-black p-1">
+                                <div class="aspect-square relative overflow-hidden rounded-full">
+                                    <img src="fotoprofissional.jpg" alt="Guilherme Yan" class="object-cover w-full h-full">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                    <div class="absolute inset-0 border-t border-l border-r border-white/20 rounded-full"></div>
                                 </div>
-                                <span class="text-sm text-gray-300">React</span>
-                            </div>
-                            <div class="tech-icon">
-                                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center mb-2 border border-neon-purple/30 group-hover:shadow-glow transition-all duration-300">
-                                    <i class="fab fa-angular text-2xl text-neon-purple"></i>
-                                </div>
-                                <span class="text-sm text-gray-300">Angular</span>
-                            </div>
-                            <div class="tech-icon">
-                                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center mb-2 border border-neon-purple/30 group-hover:shadow-glow transition-all duration-300">
-                                    <i class="fab fa-node-js text-2xl text-neon-cyan"></i>
-                                </div>
-                                <span class="text-sm text-gray-300">Node.js</span>
-                            </div>
-                            <div class="tech-icon">
-                                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center mb-2 border border-neon-purple/30 group-hover:shadow-glow transition-all duration-300">
-                                    <i class="fab fa-laravel text-2xl text-neon-pink"></i>
-                                </div>
-                                <span class="text-sm text-gray-300">Laravel</span>
-                            </div>
-                            <div class="tech-icon">
-                                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center mb-2 border border-neon-purple/30 group-hover:shadow-glow transition-all duration-300">
-                                    <i class="fab fa-aws text-2xl text-neon-blue"></i>
-                                </div>
-                                <span class="text-sm text-gray-300">AWS</span>
-                            </div>
-                            <div class="tech-icon">
-                                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center mb-2 border border-neon-purple/30 group-hover:shadow-glow transition-all duration-300">
-                                    <i class="fab fa-google text-2xl text-neon-cyan"></i>
-                                </div>
-                                <span class="text-sm text-gray-300">Google Cloud</span>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 relative z-10">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center mb-16 reveal-element">
-                <h2 class="text-4xl md:text-5xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">
-                    Projetos
-                </h2>
-                <div class="mt-2 h-1 w-20 bg-gradient-to-r from-neon-blue to-neon-purple mx-auto rounded-full"></div>
-            </div>
-            
-            <div class="project-card tilt-card reveal-element">
-                <div class="relative overflow-hidden rounded-xl border border-neon-purple/20 bg-black/50 backdrop-blur-sm">
-                    <div class="absolute inset-0 bg-gradient-to-r from-neon-blue/10 to-neon-purple/10"></div>
-                    <div class="relative p-8">
-                        <div class="flex flex-col md:flex-row gap-8">
-                            <div class="md:w-1/2">
-                                <h3 class="text-3xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple mb-4">
-                                    Vann – Transporte Escolar do Futuro
-                                </h3>
-                                <p class="text-gray-300 mb-6">
-                                    Uma plataforma revolucionária que redefine o transporte escolar com tecnologia de ponta. Desenvolvido com a Arcis, foi destaque entre os 16 melhores projetos do SENAI e apresentado no evento Senai para o Mundo.
+                    
+                    <div class="md:w-1/2 reveal-element" data-direction="right">
+                        <div class="space-y-6">
+                            <div class="relative">
+                                <div class="absolute -left-4 top-0 h-full w-0.5 bg-gradient-to-b from-neon-blue to-neon-purple"></div>
+                                <h3 class="text-2xl font-bold font-orbitron text-white mb-4">Desenvolvedor Full Stack</h3>
+                                <p class="text-gray-300 leading-relaxed">
+                                    Sou um apaixonado por tecnologia, dedicado a transformar ideias em soluções digitais que fazem a diferença. Com tecnologias em Front-End, Back-End e Cloud Computing, meu foco é criar sistemas robustos, escaláveis e visualmente impactantes, sempre seguindo os princípios do Clean Code.
                                 </p>
-                                
-                                <div class="space-y-4 mb-6">
-                                    <div class="flex items-start gap-2">
-                                        <div class="w-6 h-6 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple flex items-center justify-center flex-shrink-0 mt-0.5">
-                                            <i class="fas fa-globe text-xs text-white"></i>
-                                        </div>
-                                        <div>
-                                            <h4 class="font-medium text-white">Geolocalização em tempo real</h4>
-                                            <p class="text-sm text-gray-400">Acompanhamento preciso da localização do transporte</p>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="flex items-start gap-2">
-                                        <div class="w-6 h-6 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple flex items-center justify-center flex-shrink-0 mt-0.5">
-                                            <i class="fas fa-comments text-xs text-white"></i>
-                                        </div>
-                                        <div>
-                                            <h4 class="font-medium text-white">Chat integrado</h4>
-                                            <p class="text-sm text-gray-400">Comunicação direta entre pais, escolas e motoristas</p>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="flex items-start gap-2">
-                                        <div class="w-6 h-6 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple flex items-center justify-center flex-shrink-0 mt-0.5">
-                                            <i class="fas fa-tachometer-alt text-xs text-white"></i>
-                                        </div>
-                                        <div>
-                                            <h4 class="font-medium text-white">Painel de gestão para motoristas</h4>
-                                            <p class="text-sm text-gray-400">Interface intuitiva para gerenciamento de rotas e passageiros</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <button class="px-6 py-3 rounded-lg bg-gradient-to-r from-neon-blue to-neon-purple text-white font-medium hover:shadow-glow transition-all duration-300 transform hover:scale-105">
-                                    Ver Detalhes
-                                </button>
                             </div>
                             
-                            <div class="md:w-1/2">
-                                <div class="relative rounded-lg overflow-hidden border border-neon-purple/30 shadow-glow-purple">
-                                    <img src="vann.jpeg" alt="Projeto Vann" class="w-full h-auto">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                                    <div class="absolute bottom-4 left-4 flex items-center gap-2">
-                                        <span class="px-3 py-1 rounded-full text-xs font-medium bg-neon-blue/20 border border-neon-blue/30 text-neon-blue">
-                                            Mobile
-                                        </span>
-                                        <span class="px-3 py-1 rounded-full text-xs font-medium bg-neon-purple/20 border border-neon-purple/30 text-neon-purple">
-                                            Web
-                                        </span>
-                                    </div>
+                            <div class="grid grid-cols-2 gap-4 mt-6">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-2 h-2 rounded-full bg-neon-blue"></div>
+                                    <span class="text-gray-300">Desenvolvimento Web</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <div class="w-2 h-2 rounded-full bg-neon-purple"></div>
+                                    <span class="text-gray-300">Aplicações Móveis</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <div class="w-2 h-2 rounded-full bg-neon-blue"></div>
+                                    <span class="text-gray-300">Cloud Computing</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <div class="w-2 h-2 rounded-full bg-neon-purple"></div>
+                                    <span class="text-gray-300">Clean Code</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Timeline Section -->
-    <section id="timeline" class="py-20 bg-space-blue/30 relative z-10">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center mb-16 reveal-element">
-                <h2 class="text-4xl md:text-5xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">
-                    Linha do Tempo
-                </h2>
-                <div class="mt-2 h-1 w-20 bg-gradient-to-r from-neon-blue to-neon-purple mx-auto rounded-full"></div>
-            </div>
-            
-            <div class="relative">
-                <!-- Linha central -->
-                <div class="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-neon-blue via-neon-purple to-neon-blue hidden md:block"></div>
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 bg-space-blue/30 relative z-10">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="text-center mb-16 reveal-element">
+                    <h2 class="text-4xl md:text-5xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">
+                        Habilidades
+                    </h2>
+                    <div class="mt-2 h-1 w-20 bg-gradient-to-r from-neon-blue to-neon-purple mx-auto rounded-full"></div>
+                </div>
                 
-                <div class="space-y-12">
-                    <!-- Timeline Item 1 -->
-                    <div class="flex flex-col md:flex-row reveal-element" data-delay="100">
-                        <div class="md:w-1/2 md:text-right md:pr-12 mb-8 md:mb-0">
-                            <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-blue/20 border border-neon-blue/30 text-neon-blue mb-2">
-                                2023-2024
-                            </span>
-                            <h3 class="text-2xl font-bold font-orbitron text-white mb-2">Técnico em Desenvolvimento de Sistemas (SENAI)</h3>
-                            <p class="text-gray-300">Concluí o curso técnico em Desenvolvimento de Sistemas no SENAI, adquirindo conhecimentos fundamentais em programação, desenvolvimento web e boas práticas de software.</p>
-                        </div>
-                        
-                        <div class="hidden md:flex items-center justify-center">
-                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-neon-blue to-neon-purple flex items-center justify-center z-10">
-                                <i class="fas fa-book-open text-white"></i>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Front-End Skills -->
+                    <div class="skill-card group reveal-element" data-delay="100">
+                        <div class="absolute inset-0 bg-gradient-to-br from-neon-blue/20 to-neon-blue/5 rounded-xl transition-all duration-300 group-hover:opacity-100 opacity-50"></div>
+                        <div class="relative p-6">
+                            <div class="flex items-center gap-3 mb-6">
+                                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-neon-blue/20 to-neon-blue/10 flex items-center justify-center border border-neon-blue/30 group-hover:shadow-glow transition-all duration-300">
+                                    <i class="fas fa-code text-neon-blue"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold font-orbitron text-white">Front-End</h3>
                             </div>
-                        </div>
-                        
-                        <div class="md:w-1/2"></div>
-                    </div>
-                    
-                    <!-- Timeline Item 2 -->
-                    <div class="flex flex-col md:flex-row-reverse reveal-element" data-delay="200">
-                        <div class="md:w-1/2 md:pl-12 mb-8 md:mb-0">
-                            <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-purple/20 border border-neon-purple/30 text-neon-purple mb-2">
-                                2024
-                            </span>
-                            <h3 class="text-2xl font-bold font-orbitron text-white mb-2">Desenvolvedor Full Stack Freelancer</h3>
-                            <p class="text-gray-300">Atuo como freelancer no desenvolvimento de soluções web personalizadas, com foco na criação de sites responsivos, otimização de performance e experiência do usuário. Tenho experiência em diversas tecnologias, como HTML, CSS, JavaScript, PHP, e frameworks modernos como React.</p>
-                        </div>
-                        
-                        <div class="hidden md:flex items-center justify-center">
-                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-neon-blue to-neon-purple flex items-center justify-center z-10">
-                                <i class="fas fa-code text-white"></i>
-                            </div>
-                        </div>
-                        
-                        <div class="md:w-1/2"></div>
-                    </div>
-                    
-                    <!-- Timeline Item 3 -->
-                    <div class="flex flex-col md:flex-row reveal-element" data-delay="300">
-                        <div class="md:w-1/2 md:text-right md:pr-12 mb-8 md:mb-0">
-                            <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-blue/20 border border-neon-blue/30 text-neon-blue mb-2">
-                                2024
-                            </span>
-                            <h3 class="text-2xl font-bold font-orbitron text-white mb-2">Projeto Vann</h3>
-                            <p class="text-gray-300">Liderança no desenvolvimento do projeto Vann, selecionado entre os 16 melhores do SENAI e apresentado no evento Senai para o Mundo.</p>
-                        </div>
-                        
-                        <div class="hidden md:flex items-center justify-center">
-                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-neon-blue to-neon-purple flex items-center justify-center z-10">
-                                <i class="fas fa-award text-white"></i>
-                            </div>
-                        </div>
-                        
-                        <div class="md:w-1/2"></div>
-                    </div>
-                    
-                    <!-- Timeline Item 4 -->
-                    <div class="flex flex-col md:flex-row-reverse reveal-element" data-delay="400">
-                        <div class="md:w-1/2 md:pl-12 mb-8 md:mb-0">
-                            <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-purple/20 border border-neon-purple/30 text-neon-purple mb-2">
-                                2025
-                            </span>
-                            <h3 class="text-2xl font-bold font-orbitron text-white mb-2">Estágio de Desenvolvimento Web</h3>
-                            <p class="text-gray-300">Atuei como estagiário em desenvolvimento web, com foco em:</p>
-                            <ul class="mt-4 space-y-2">
-                                <li class="text-gray-300 flex items-start gap-2">
-                                    <span class="text-neon-purple mt-1">•</span>
-                                    <span>Desenvolvimento Front-end: Criação de interfaces dinâmicas e responsivas utilizando Angular, React, Tailwind, Bootstrap, HTML, CSS e JavaScript.</span>
+                            
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-neon-blue mt-1">•</span>
+                                    <span class="text-gray-300">HTML, CSS, JavaScript</span>
                                 </li>
-                                <li class="text-gray-300 flex items-start gap-2">
-                                    <span class="text-neon-purple mt-1">•</span>
-                                    <span>Desenvolvimento Back-end: MVC, integração e criação de APIs RESTful, Laravel e PHP.</span>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-neon-blue mt-1">•</span>
+                                    <span class="text-gray-300">React.js, Angular, React Native</span>
                                 </li>
-                                <li class="text-gray-300 flex items-start gap-2">
-                                    <span class="text-neon-purple mt-1">•</span>
-                                    <span>Manutenção e Otimização: Correção de bugs e melhorias de performance.</span>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-neon-blue mt-1">•</span>
+                                    <span class="text-gray-300">Bootstrap, Tailwind CSS</span>
                                 </li>
                             </ul>
                         </div>
-                        
-                        <div class="hidden md:flex items-center justify-center">
-                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-neon-blue to-neon-purple flex items-center justify-center z-10">
-                                <i class="fas fa-briefcase text-white"></i>
-                            </div>
-                        </div>
-                        
-                        <div class="md:w-1/2"></div>
                     </div>
                     
-                    <!-- Timeline Item 5 -->
-                    <div class="flex flex-col md:flex-row reveal-element" data-delay="500">
-                        <div class="md:w-1/2 md:text-right md:pr-12 mb-8 md:mb-0">
-                            <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-blue/20 border border-neon-blue/30 text-neon-blue mb-2">
-                                2025
-                            </span>
-                            <h3 class="text-2xl font-bold font-orbitron text-white mb-2">Ensino Superior: Análise e Desenvolvimento de Sistemas</h3>
-                            <p class="text-gray-300">Concluí o curso superior em Análise e Desenvolvimento de Sistemas, aprofundando meus conhecimentos em desenvolvimento de software, arquitetura de sistemas e tecnologias modernas.</p>
+                    <!-- Back-End Skills -->
+                    <div class="skill-card group reveal-element" data-delay="300">
+                        <div class="absolute inset-0 bg-gradient-to-br from-neon-purple/20 to-neon-purple/5 rounded-xl transition-all duration-300 group-hover:opacity-100 opacity-50"></div>
+                        <div class="relative p-6">
+                            <div class="flex items-center gap-3 mb-6">
+                                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-neon-purple/20 to-neon-purple/10 flex items-center justify-center border border-neon-purple/30 group-hover:shadow-glow-purple transition-all duration-300">
+                                    <i class="fas fa-server text-neon-purple"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold font-orbitron text-white">Back-End</h3>
+                            </div>
+                            
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-neon-purple mt-1">•</span>
+                                    <span class="text-gray-300">PHP, Python, Laravel</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-neon-purple mt-1">•</span>
+                                    <span class="text-gray-300">Node.js</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-neon-purple mt-1">•</span>
+                                    <span class="text-gray-300">APIs RESTful</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Other Skills -->
+                    <div class="skill-card group reveal-element" data-delay="500">
+                        <div class="absolute inset-0 bg-gradient-to-br from-neon-cyan/20 to-neon-cyan/5 rounded-xl transition-all duration-300 group-hover:opacity-100 opacity-50"></div>
+                        <div class="relative p-6">
+                            <div class="flex items-center gap-3 mb-6">
+                                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-neon-cyan/20 to-neon-cyan/10 flex items-center justify-center border border-neon-cyan/30 group-hover:shadow-glow-cyan transition-all duration-300">
+                                    <i class="fas fa-database text-neon-cyan"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold font-orbitron text-white">Outras Competências</h3>
+                            </div>
+                            
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-neon-cyan mt-1">•</span>
+                                    <span class="text-gray-300">MySQL, NoSQL</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-neon-cyan mt-1">•</span>
+                                    <span class="text-gray-300">Git, GitHub, GitFlow</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-neon-cyan mt-1">•</span>
+                                    <span class="text-gray-300">AWS, Google Cloud</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-neon-cyan mt-1">•</span>
+                                    <span class="text-gray-300">Clean Code</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-16 reveal-element" data-delay="600">
+                    <div class="relative overflow-hidden rounded-xl border border-neon-purple/20 bg-black/50 backdrop-blur-sm">
+                        <div class="absolute inset-0 bg-gradient-to-r from-neon-blue/10 to-neon-purple/10"></div>
+                        <div class="relative p-8">
+                            <h3 class="text-2xl font-bold font-orbitron text-white mb-6">Tecnologias</h3>
+                            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
+                                <!-- Tech Icons -->
+                                <div class="tech-icon">
+                                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center mb-2 border border-neon-purple/30 group-hover:shadow-glow transition-all duration-300">
+                                        <i class="fab fa-react text-2xl text-neon-blue"></i>
+                                    </div>
+                                    <span class="text-sm text-gray-300">React</span>
+                                </div>
+                                <div class="tech-icon">
+                                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center mb-2 border border-neon-purple/30 group-hover:shadow-glow transition-all duration-300">
+                                        <i class="fab fa-angular text-2xl text-neon-purple"></i>
+                                    </div>
+                                    <span class="text-sm text-gray-300">Angular</span>
+                                </div>
+                                <div class="tech-icon">
+                                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center mb-2 border border-neon-purple/30 group-hover:shadow-glow transition-all duration-300">
+                                        <i class="fab fa-node-js text-2xl text-neon-cyan"></i>
+                                    </div>
+                                    <span class="text-sm text-gray-300">Node.js</span>
+                                </div>
+                                <div class="tech-icon">
+                                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center mb-2 border border-neon-purple/30 group-hover:shadow-glow transition-all duration-300">
+                                        <i class="fab fa-laravel text-2xl text-neon-pink"></i>
+                                    </div>
+                                    <span class="text-sm text-gray-300">Laravel</span>
+                                </div>
+                                <div class="tech-icon">
+                                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center mb-2 border border-neon-purple/30 group-hover:shadow-glow transition-all duration-300">
+                                        <i class="fab fa-aws text-2xl text-neon-blue"></i>
+                                    </div>
+                                    <span class="text-sm text-gray-300">AWS</span>
+                                </div>
+                                <div class="tech-icon">
+                                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center mb-2 border border-neon-purple/30 group-hover:shadow-glow transition-all duration-300">
+                                        <i class="fab fa-google text-2xl text-neon-cyan"></i>
+                                    </div>
+                                    <span class="text-sm text-gray-300">Google Cloud</span>
+                                </div>
+                                <div class="tech-icon">
+                                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center mb-2 border border-neon-purple/30 group-hover:shadow-glow transition-all duration-300">
+                                        <i class="fab fa-js text-2xl text-neon-yellow"></i>
+                                    </div>
+                                    <span class="text-sm text-gray-300">JavaScript</span>
+                                </div>
+                                <div class="tech-icon">
+                                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center mb-2 border border-neon-purple/30 group-hover:shadow-glow transition-all duration-300">
+                                        <i class="fab fa-python text-2xl text-neon-blue"></i>
+                                    </div>
+                                    <span class="text-sm text-gray-300">Python</span>
+                                </div>
+                                <div class="tech-icon">
+                                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center mb-2 border border-neon-purple/30 group-hover:shadow-glow transition-all duration-300">
+                                        <i class="fab fa-php text-2xl text-neon-purple"></i>
+                                    </div>
+                                    <span class="text-sm text-gray-300">PHP</span>
+                                </div>
+                                <div class="tech-icon">
+                                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center mb-2 border border-neon-purple/30 group-hover:shadow-glow transition-all duration-300">
+                                        <i class="fab fa-css3-alt text-2xl text-neon-cyan"></i>
+                                    </div>
+                                    <span class="text-sm text-gray-300">CSS</span>
+                                </div>
+                                <div class="tech-icon">
+                                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center mb-2 border border-neon-purple/30 group-hover:shadow-glow transition-all duration-300">
+                                        <i class="fab fa-react text-2xl text-neon-blue"></i>
+                                    </div>
+                                    <span class="text-sm text-gray-300">React Native</span>
+                                </div>
+                                <div class="tech-icon">
+                                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center mb-2 border border-neon-purple/30 group-hover:shadow-glow transition-all duration-300">
+                                        <i class="fab fa-vuejs text-2xl text-neon-green"></i>
+                                    </div>
+                                    <span class="text-sm text-gray-300">Vue.js</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 relative z-10">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="text-center mb-16 reveal-element">
+                    <h2 class="text-4xl md:text-5xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">
+                        Projetos
+                    </h2>
+                    <div class="mt-2 h-1 w-20 bg-gradient-to-r from-neon-blue to-neon-purple mx-auto rounded-full"></div>
+                </div>
+                
+                <div class="project-card tilt-card reveal-element">
+                    <div class="relative overflow-hidden rounded-xl border border-neon-purple/20 bg-black/50 backdrop-blur-sm">
+                        <div class="absolute inset-0 bg-gradient-to-r from-neon-blue/10 to-neon-purple/10"></div>
+                        <div class="relative p-8">
+                            <div class="flex flex-col md:flex-row gap-8">
+                                <div class="md:w-1/2">
+                                    <h3 class="text-3xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple mb-4">
+                                        Vann – Transporte Escolar do Futuro
+                                    </h3>
+                                    <p class="text-gray-300 mb-6">
+                                        Uma plataforma revolucionária que redefine o transporte escolar com tecnologia de ponta. Desenvolvido com a Arcis, foi destaque entre os 16 melhores projetos do SENAI e apresentado no evento Senai para o Mundo.
+                                    </p>
+                                    
+                                    <div class="space-y-4 mb-6">
+                                        <div class="flex items-start gap-2">
+                                            <div class="w-6 h-6 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple flex items-center justify-center flex-shrink-0 mt-0.5">
+                                                <i class="fas fa-globe text-xs text-white"></i>
+                                            </div>
+                                            <div>
+                                                <h4 class="font-medium text-white">Geolocalização em tempo real</h4>
+                                                <p class="text-sm text-gray-400">Acompanhamento preciso da localização do transporte</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="flex items-start gap-2">
+                                            <div class="w-6 h-6 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple flex items-center justify-center flex-shrink-0 mt-0.5">
+                                                <i class="fas fa-comments text-xs text-white"></i>
+                                            </div>
+                                            <div>
+                                                <h4 class="font-medium text-white">Chat integrado</h4>
+                                                <p class="text-sm text-gray-400">Comunicação direta entre pais, escolas e motoristas</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="flex items-start gap-2">
+                                            <div class="w-6 h-6 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple flex items-center justify-center flex-shrink-0 mt-0.5">
+                                                <i class="fas fa-tachometer-alt text-xs text-white"></i>
+                                            </div>
+                                            <div>
+                                                <h4 class="font-medium text-white">Painel de gestão para motoristas</h4>
+                                                <p class="text-sm text-gray-400">Interface intuitiva para gerenciamento de rotas e passageiros</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="https://api.whatsapp.com/send/?phone=5512991293155&text=Gostaria%20de%20um%20orçamento%20para%20um%20projeto&type=phone_number&app_absent=0" target="_blank">
+                                        <button class="px-6 py-3 rounded-lg bg-gradient-to-r from-neon-blue to-neon-purple text-white font-medium hover:shadow-glow transition-all duration-300 transform hover:scale-105">
+                                            Faça o seu Projeto
+                                        </button>
+                                    </a>
+                                    
+                                </div>
+                                
+                                <div class="md:w-1/2">
+                                    <div class="relative rounded-lg overflow-hidden border border-neon-purple/30 shadow-glow-purple">
+                                        <img src="vann.jpeg" alt="Projeto Vann" class="w-full h-auto">
+                                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                                        <div class="absolute bottom-4 left-4 flex items-center gap-2">
+                                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-neon-blue/20 border border-neon-blue/30 text-neon-blue">
+                                                Mobile
+                                            </span>
+                                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-neon-purple/20 border border-neon-purple/30 text-neon-purple">
+                                                Web
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section id="timeline" class="py-20 bg-space-blue/30 relative z-10">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="text-center mb-16 reveal-element">
+                    <h2 class="text-4xl md:text-5xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">
+                        Linha do Tempo
+                    </h2>
+                    <div class="mt-2 h-1 w-20 bg-gradient-to-r from-neon-blue to-neon-purple mx-auto rounded-full"></div>
+                </div>
+                
+                <div class="relative">
+                    <!-- Linha central -->
+                    <div class="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-neon-blue via-neon-purple to-neon-blue hidden md:block"></div>
+                    
+                    <div class="space-y-12">
+                        <!-- Timeline Item 1 -->
+                        <div class="flex flex-col md:flex-row reveal-element" data-delay="100">
+                            <div class="md:w-1/2 md:text-right md:pr-12 mb-8 md:mb-0">
+                                <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-blue/20 border border-neon-blue/30 text-neon-blue mb-2">
+                                    2023-2024
+                                </span>
+                                <h3 class="text-2xl font-bold font-orbitron text-white mb-2">Técnico em Desenvolvimento de Sistemas (SENAI)</h3>
+                                <p class="text-gray-300">Concluí o curso técnico em Desenvolvimento de Sistemas no SENAI, adquirindo conhecimentos fundamentais em programação, desenvolvimento web e boas práticas de software.</p>
+                            </div>
+                            
+                            <div class="hidden md:flex items-center justify-center">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-neon-blue to-neon-purple flex items-center justify-center z-10">
+                                    <i class="fas fa-book-open text-white"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="md:w-1/2"></div>
                         </div>
                         
-                        <div class="hidden md:flex items-center justify-center">
-                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-neon-blue to-neon-purple flex items-center justify-center z-10">
-                                <i class="fas fa-graduation-cap text-white"></i>
+                        <!-- Timeline Item 2 -->
+                        <div class="flex flex-col md:flex-row-reverse reveal-element" data-delay="200">
+                            <div class="md:w-1/2 md:pl-12 mb-8 md:mb-0">
+                                <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-purple/20 border border-neon-purple/30 text-neon-purple mb-2">
+                                    2024
+                                </span>
+                                <h3 class="text-2xl font-bold font-orbitron text-white mb-2">Desenvolvedor Full Stack Freelancer</h3>
+                                <p class="text-gray-300">Atuo como freelancer no desenvolvimento de soluções web personalizadas, com foco na criação de sites responsivos, otimização de performance e experiência do usuário. Tenho experiência em diversas tecnologias, como HTML, CSS, JavaScript, PHP, e frameworks modernos como React.</p>
                             </div>
+                            
+                            <div class="hidden md:flex items-center justify-center">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-neon-blue to-neon-purple flex items-center justify-center z-10">
+                                    <i class="fas fa-code text-white"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="md:w-1/2"></div>
                         </div>
                         
-                        <div class="md:w-1/2"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifications Section -->
-    <section id="certifications" class="py-20 relative z-10">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center mb-16 reveal-element">
-                <h2 class="text-4xl md:text-5xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">
-                    Certificações
-                </h2>
-                <div class="mt-2 h-1 w-20 bg-gradient-to-r from-neon-blue to-neon-purple mx-auto rounded-full"></div>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Certification Cards -->
-                <div class="certification-card tilt-card reveal-element" data-delay="100">
-                    <div class="h-full relative overflow-hidden rounded-xl border border-neon-blue/20 bg-black/50 backdrop-blur-sm p-6 hover:border-neon-blue/40 transition-all duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-r from-neon-blue/5 to-neon-purple/5"></div>
-                        <div class="relative">
-                            <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center border border-neon-blue/30 flex-shrink-0">
-                                    <i class="fab fa-microsoft text-xl text-neon-blue"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-bold font-orbitron text-white mb-1">Microsoft Certified: IA gerativa responsável</h3>
-                                    <p class="text-gray-400">Microsoft</p>
-                                    <div class="mt-3 inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-blue/20 border border-neon-blue/30 text-neon-blue">
-                                        Inteligência Artificial
-                                    </div>
-                                </div>
+                        <!-- Timeline Item 3 -->
+                        <div class="flex flex-col md:flex-row reveal-element" data-delay="300">
+                            <div class="md:w-1/2 md:text-right md:pr-12 mb-8 md:mb-0">
+                                <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-blue/20 border border-neon-blue/30 text-neon-blue mb-2">
+                                    2024
+                                </span>
+                                <h3 class="text-2xl font-bold font-orbitron text-white mb-2">Projeto Vann</h3>
+                                <p class="text-gray-300">Liderança no desenvolvimento do projeto Vann, selecionado entre os 16 melhores do SENAI e apresentado no evento Senai para o Mundo.</p>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="certification-card tilt-card reveal-element" data-delay="200">
-                    <div class="h-full relative overflow-hidden rounded-xl border border-neon-purple/20 bg-black/50 backdrop-blur-sm p-6 hover:border-neon-purple/40 transition-all duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-r from-neon-blue/5 to-neon-purple/5"></div>
-                        <div class="relative">
-                            <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center border border-neon-purple/30 flex-shrink-0">
-                                    <i class="fab fa-microsoft text-xl text-neon-purple"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-bold font-orbitron text-white mb-1">Microsoft Certified: Manage your work with GitHub projects</h3>
-                                    <p class="text-gray-400">Microsoft</p>
-                                    <div class="mt-3 inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-purple/20 border border-neon-purple/30 text-neon-purple">
-                                        Git, GitHub
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="certification-card tilt-card reveal-element" data-delay="300">
-                    <div class="h-full relative overflow-hidden rounded-xl border border-neon-blue/20 bg-black/50 backdrop-blur-sm p-6 hover:border-neon-blue/40 transition-all duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-r from-neon-blue/5 to-neon-purple/5"></div>
-                        <div class="relative">
-                            <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center border border-neon-blue/30 flex-shrink-0">
-                                    <i class="fab fa-microsoft text-xl text-neon-blue"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-bold font-orbitron text-white mb-1">Microsoft Certified: Microsoft Azure AI Concepts: AI Overview</h3>
-                                    <p class="text-gray-400">Microsoft</p>
-                                    <div class="mt-3 inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-blue/20 border border-neon-blue/30 text-neon-blue">
-                                        Microsoft Azure, Machine Learning
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="certification-card tilt-card reveal-element" data-delay="400">
-                    <div class="h-full relative overflow-hidden rounded-xl border border-neon-purple/20 bg-black/50 backdrop-blur-sm p-6 hover:border-neon-purple/40 transition-all duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-r from-neon-blue/5 to-neon-purple/5"></div>
-                        <div class="relative">
-                            <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center border border-neon-purple/30 flex-shrink-0">
-                                    <i class="fab fa-aws text-xl text-neon-purple"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-bold font-orbitron text-white mb-1">AWS Academy Graduate - AWS Academy Cloud Foundations</h3>
-                                    <p class="text-gray-400">SENAI - AWS</p>
-                                    <div class="mt-3 inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-purple/20 border border-neon-purple/30 text-neon-purple">
-                                        Amazon Web Services, Computação em Nuvem
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Mais certificações... -->
-                <div class="certification-card tilt-card reveal-element" data-delay="500">
-                    <div class="h-full relative overflow-hidden rounded-xl border border-neon-blue/20 bg-black/50 backdrop-blur-sm p-6 hover:border-neon-blue/40 transition-all duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-r from-neon-blue/5 to-neon-purple/5"></div>
-                        <div class="relative">
-                            <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center border border-neon-blue/30 flex-shrink-0">
-                                    <i class="fab fa-microsoft text-xl text-neon-blue"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-bold font-orbitron text-white mb-1">Microsoft Certified: Types of Cloud Service</h3>
-                                    <p class="text-gray-400">Microsoft</p>
-                                    <div class="mt-3 inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-blue/20 border border-neon-blue/30 text-neon-blue">
-                                        Computação em Nuvem
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="certification-card tilt-card reveal-element" data-delay="600">
-                    <div class="h-full relative overflow-hidden rounded-xl border border-neon-purple/20 bg-black/50 backdrop-blur-sm p-6 hover:border-neon-purple/40 transition-all duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-r from-neon-blue/5 to-neon-purple/5"></div>
-                        <div class="relative">
-                            <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center border border-neon-purple/30 flex-shrink-0">
-                                    <i class="fas fa-database text-xl text-neon-purple"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-bold font-orbitron text-white mb-1">Tasks of a DBA</h3>
-                                    <p class="text-gray-400">Power Tuning</p>
-                                    <div class="mt-3 inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-purple/20 border border-neon-purple/30 text-neon-purple">
-                                        Gerenciamento de Bancos de Dados
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="certification-card tilt-card reveal-element" data-delay="700">
-                    <div class="h-full relative overflow-hidden rounded-xl border border-neon-blue/20 bg-black/50 backdrop-blur-sm p-6 hover:border-neon-blue/40 transition-all duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-r from-neon-blue/5 to-neon-purple/5"></div>
-                        <div class="relative">
-                            <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center border border-neon-blue/30 flex-shrink-0">
-                                    <i class="fas fa-shield-alt text-xl text-neon-blue"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-bold font-orbitron text-white mb-1">Data Protection - LPG</h3>
-                                    <p class="text-gray-400">SENAI</p>
-                                    <div class="mt-3 inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-blue/20 border border-neon-blue/30 text-neon-blue">
-                                        Cibersegurança, LGPD
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="certification-card tilt-card reveal-element" data-delay="800">
-                    <div class="h-full relative overflow-hidden rounded-xl border border-neon-purple/20 bg-black/50 backdrop-blur-sm p-6 hover:border-neon-purple/40 transition-all duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-r from-neon-blue/5 to-neon-purple/5"></div>
-                        <div class="relative">
-                            <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center border border-neon-purple/30 flex-shrink-0">
-                                    <i class="fab fa-google text-xl text-neon-purple"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-bold font-orbitron text-white mb-1">Google Cloud Foundations</h3>
-                                    <p class="text-gray-400">SENAI</p>
-                                    <div class="mt-3 inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-purple/20 border border-neon-purple/30 text-neon-purple">
-                                        Computação em Nuvem
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-space-blue/30 relative z-10">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center mb-16 reveal-element">
-                <h2 class="text-4xl md:text-5xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">
-                    Contato
-                </h2>
-                <div class="mt-2 h-1 w-20 bg-gradient-to-r from-neon-blue to-neon-purple mx-auto rounded-full"></div>
-            </div>
-            
-            <div class="flex flex-col md:flex-row gap-8">
-                <div class="md:w-1/2 reveal-element" data-direction="left">
-                    <div class="relative overflow-hidden rounded-xl border border-neon-blue/20 bg-black/50 backdrop-blur-sm p-8 h-full">
-                        <div class="absolute inset-0 bg-gradient-to-r from-neon-blue/10 to-neon-purple/10"></div>
-                        <div class="relative">
-                            <h3 class="text-2xl font-bold font-orbitron text-white mb-6">Vamos criar algo extraordinário juntos?</h3>
-                            <p class="text-gray-300 mb-8">
-                                Estou sempre aberto a novos projetos e oportunidades. Se você tem uma ideia ou projeto em mente, entre em contato!
-                            </p>
                             
-                            <div class="space-y-6">
-                                <div class="flex items-center gap-4">
-                                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center border border-neon-blue/30">
-                                        <i class="fab fa-whatsapp text-xl text-neon-blue"></i>
+                            <div class="hidden md:flex items-center justify-center">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-neon-blue to-neon-purple flex items-center justify-center z-10">
+                                    <i class="fas fa-award text-white"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="md:w-1/2"></div>
+                        </div>
+                        <!-- Timeline Item 4 -->
+                        <div class="flex flex-col md:flex-row-reverse reveal-element" data-delay="400">
+                            <div class="md:w-1/2 md:pl-12 mb-8 md:mb-0">
+                                <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-purple/20 border border-neon-purple/30 text-neon-purple mb-2">
+                                    2025
+                                </span>
+                                <h3 class="text-2xl font-bold font-orbitron text-white mb-2">Estágio de Desenvolvimento Web</h3>
+                                <p class="text-gray-300">Atuei como estagiário em desenvolvimento web, com foco em:</p>
+                                <ul class="mt-4 space-y-2">
+                                    <li class="text-gray-300 flex items-start gap-2">
+                                        <span class="text-neon-purple mt-1">•</span>
+                                        <span>Desenvolvimento Front-end: Criação de interfaces dinâmicas e responsivas utilizando Angular, React, Tailwind, Bootstrap, HTML, CSS e JavaScript.</span>
+                                    </li>
+                                    <li class="text-gray-300 flex items-start gap-2">
+                                        <span class="text-neon-purple mt-1">•</span>
+                                        <span>Desenvolvimento Back-end: MVC, integração e criação de APIs RESTful, Laravel e PHP.</span>
+                                    </li>
+                                    <li class="text-gray-300 flex items-start gap-2">
+                                        <span class="text-neon-purple mt-1">•</span>
+                                        <span>Manutenção e Otimização: Correção de bugs e melhorias de performance.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="hidden md:flex items-center justify-center">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-neon-blue to-neon-purple flex items-center justify-center z-10">
+                                    <i class="fas fa-briefcase text-white"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="md:w-1/2"></div>
+                        </div>
+                        
+                        <!-- Timeline Item 5 -->
+                        <div class="flex flex-col md:flex-row reveal-element" data-delay="500">
+                            <div class="md:w-1/2 md:text-right md:pr-12 mb-8 md:mb-0">
+                                <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-blue/20 border border-neon-blue/30 text-neon-blue mb-2">
+                                    2025
+                                </span>
+                                <h3 class="text-2xl font-bold font-orbitron text-white mb-2">Ensino Superior: Análise e Desenvolvimento de Sistemas</h3>
+                                <p class="text-gray-300">Concluí o curso superior em Análise e Desenvolvimento de Sistemas, aprofundando meus conhecimentos em desenvolvimento de software, arquitetura de sistemas e tecnologias modernas.</p>
+                            </div>
+                            
+                            <div class="hidden md:flex items-center justify-center">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-neon-blue to-neon-purple flex items-center justify-center z-10">
+                                    <i class="fas fa-graduation-cap text-white"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="md:w-1/2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="py-20 relative z-10">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="text-center mb-16 reveal-element">
+                    <h2 class="text-4xl md:text-5xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">
+                        Certificações
+                    </h2>
+                    <div class="mt-2 h-1 w-20 bg-gradient-to-r from-neon-blue to-neon-purple mx-auto rounded-full"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Certification Cards -->
+                    <div class="certification-card tilt-card reveal-element" data-delay="100">
+                        <div class="h-full relative overflow-hidden rounded-xl border border-neon-blue/20 bg-black/50 backdrop-blur-sm p-6 hover:border-neon-blue/40 transition-all duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-r from-neon-blue/5 to-neon-purple/5"></div>
+                            <div class="relative">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center border border-neon-blue/30 flex-shrink-0">
+                                        <i class="fab fa-microsoft text-xl text-neon-blue"></i>
                                     </div>
                                     <div>
-                                        <h4 class="font-medium text-white">WhatsApp</h4>
-                                        <p class="text-gray-400">+55 12 99129-3155</p>
+                                        <h3 class="text-xl font-bold font-orbitron text-white mb-1">Microsoft Certified: IA gerativa responsável</h3>
+                                        <p class="text-gray-400">Microsoft</p>
+                                        <div class="mt-3 inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-blue/20 border border-neon-blue/30 text-neon-blue">
+                                            Inteligência Artificial
+                                        </div>
                                     </div>
                                 </div>
-                                
-                                <div class="flex items-center gap-4">
-                                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center border border-neon-purple/30">
-                                        <i class="fab fa-linkedin text-xl text-neon-purple"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="certification-card tilt-card reveal-element" data-delay="200">
+                        <div class="h-full relative overflow-hidden rounded-xl border border-neon-purple/20 bg-black/50 backdrop-blur-sm p-6 hover:border-neon-purple/40 transition-all duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-r from-neon-blue/5 to-neon-purple/5"></div>
+                            <div class="relative">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center border border-neon-purple/30 flex-shrink-0">
+                                        <i class="fab fa-microsoft text-xl text-neon-purple"></i>
                                     </div>
                                     <div>
-                                        <h4 class="font-medium text-white">LinkedIn</h4>
-                                        <p class="text-gray-400">linkedin.com/in/guilherme-yan-tec</p>
+                                        <h3 class="text-xl font-bold font-orbitron text-white mb-1">Microsoft Certified: Manage your work with GitHub projects</h3>
+                                        <p class="text-gray-400">Microsoft</p>
+                                        <div class="mt-3 inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-purple/20 border border-neon-purple/30 text-neon-purple">
+                                            Git, GitHub
+                                        </div>
                                     </div>
                                 </div>
-                                
-                                <div class="flex items-center gap-4">
-                                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center border border-neon-cyan/30">
-                                        <i class="fab fa-github text-xl text-neon-cyan"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="certification-card tilt-card reveal-element" data-delay="300">
+                        <div class="h-full relative overflow-hidden rounded-xl border border-neon-blue/20 bg-black/50 backdrop-blur-sm p-6 hover:border-neon-blue/40 transition-all duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-r from-neon-blue/5 to-neon-purple/5"></div>
+                            <div class="relative">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center border border-neon-blue/30 flex-shrink-0">
+                                        <i class="fab fa-microsoft text-xl text-neon-blue"></i>
                                     </div>
                                     <div>
-                                        <h4 class="font-medium text-white">GitHub</h4>
-                                        <p class="text-gray-400">github.com/guiyan10</p>
+                                        <h3 class="text-xl font-bold font-orbitron text-white mb-1">Microsoft Certified: Microsoft Azure AI Concepts: AI Overview</h3>
+                                        <p class="text-gray-400">Microsoft</p>
+                                        <div class="mt-3 inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-blue/20 border border-neon-blue/30 text-neon-blue">
+                                            Microsoft Azure, Machine Learning
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="certification-card tilt-card reveal-element" data-delay="400">
+                        <div class="h-full relative overflow-hidden rounded-xl border border-neon-purple/20 bg-black/50 backdrop-blur-sm p-6 hover:border-neon-purple/40 transition-all duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-r from-neon-blue/5 to-neon-purple/5"></div>
+                            <div class="relative">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center border border-neon-purple/30 flex-shrink-0">
+                                        <i class="fab fa-aws text-xl text-neon-purple"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold font-orbitron text-white mb-1">AWS Academy Graduate - AWS Academy Cloud Foundations</h3>
+                                        <p class="text-gray-400">SENAI - AWS</p>
+                                        <div class="mt-3 inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-purple/20 border border-neon-purple/30 text-neon-purple">
+                                            Amazon Web Services, Computação em Nuvem
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Mais certificações... -->
+                    <div class="certification-card tilt-card reveal-element" data-delay="500">
+                        <div class="h-full relative overflow-hidden rounded-xl border border-neon-blue/20 bg-black/50 backdrop-blur-sm p-6 hover:border-neon-blue/40 transition-all duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-r from-neon-blue/5 to-neon-purple/5"></div>
+                            <div class="relative">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center border border-neon-blue/30 flex-shrink-0">
+                                        <i class="fab fa-microsoft text-xl text-neon-blue"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold font-orbitron text-white mb-1">Microsoft Certified: Types of Cloud Service</h3>
+                                        <p class="text-gray-400">Microsoft</p>
+                                        <div class="mt-3 inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-blue/20 border border-neon-blue/30 text-neon-blue">
+                                            Computação em Nuvem
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="certification-card tilt-card reveal-element" data-delay="600">
+                        <div class="h-full relative overflow-hidden rounded-xl border border-neon-purple/20 bg-black/50 backdrop-blur-sm p-6 hover:border-neon-purple/40 transition-all duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-r from-neon-blue/5 to-neon-purple/5"></div>
+                            <div class="relative">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center border border-neon-purple/30 flex-shrink-0">
+                                        <i class="fas fa-database text-xl text-neon-purple"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold font-orbitron text-white mb-1">Tasks of a DBA</h3>
+                                        <p class="text-gray-400">Power Tuning</p>
+                                        <div class="mt-3 inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-purple/20 border border-neon-purple/30 text-neon-purple">
+                                            Gerenciamento de Bancos de Dados
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="certification-card tilt-card reveal-element" data-delay="700">
+                        <div class="h-full relative overflow-hidden rounded-xl border border-neon-blue/20 bg-black/50 backdrop-blur-sm p-6 hover:border-neon-blue/40 transition-all duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-r from-neon-blue/5 to-neon-purple/5"></div>
+                            <div class="relative">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center border border-neon-blue/30 flex-shrink-0">
+                                        <i class="fas fa-shield-alt text-xl text-neon-blue"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold font-orbitron text-white mb-1">Data Protection - LPG</h3>
+                                        <p class="text-gray-400">SENAI</p>
+                                        <div class="mt-3 inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-blue/20 border border-neon-blue/30 text-neon-blue">
+                                            Cibersegurança, LGPD
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="certification-card tilt-card reveal-element" data-delay="800">
+                        <div class="h-full relative overflow-hidden rounded-xl border border-neon-purple/20 bg-black/50 backdrop-blur-sm p-6 hover:border-neon-purple/40 transition-all duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-r from-neon-blue/5 to-neon-purple/5"></div>
+                            <div class="relative">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center border border-neon-purple/30 flex-shrink-0">
+                                        <i class="fab fa-google text-xl text-neon-purple"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold font-orbitron text-white mb-1">Google Cloud Foundations</h3>
+                                        <p class="text-gray-400">SENAI</p>
+                                        <div class="mt-3 inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-purple/20 border border-neon-purple/30 text-neon-purple">
+                                            Computação em Nuvem
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-space-blue/30 relative z-10">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="text-center mb-16 reveal-element">
+                    <h2 class="text-4xl md:text-5xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">
+                        Contato
+                    </h2>
+                    <div class="mt-2 h-1 w-20 bg-gradient-to-r from-neon-blue to-neon-purple mx-auto rounded-full"></div>
+                </div>
                 
-                <div class="md:w-1/2 reveal-element" data-direction="right">
-                    <div class="relative overflow-hidden rounded-xl border border-neon-purple/20 bg-black/50 backdrop-blur-sm p-8">
-                        <div class="absolute inset-0 bg-gradient-to-r from-neon-blue/10 to-neon-purple/10"></div>
-                        <div class="relative">
-                            <h3 class="text-2xl font-bold font-orbitron text-white mb-6">Envie uma mensagem</h3>
-                            
-                            <form class="space-y-6" id="contact-form">
-                                <div>
-                                    <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Nome</label>
-                                    <input 
-                                        type="text" 
-                                        id="name" 
-                                        class="w-full px-4 py-3 rounded-lg bg-black/50 border border-neon-purple/30 text-white focus:outline-none focus:border-neon-purple focus:ring-1 focus:ring-neon-purple/50"
-                                        placeholder="Seu nome"
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/2 reveal-element" data-direction="left">
+                        <div class="relative overflow-hidden rounded-xl border border-neon-blue/20 bg-black/50 backdrop-blur-sm p-8 h-full">
+                            <div class="absolute inset-0 bg-gradient-to-r from-neon-blue/10 to-neon-purple/10"></div>
+                            <div class="relative">
+                                <h3 class="text-2xl font-bold font-orbitron text-white mb-6">Vamos criar algo extraordinário juntos?</h3>
+                                <p class="text-gray-300 mb-8">
+                                    Estou sempre aberto a novos projetos e oportunidades. Se você tem uma ideia ou projeto em mente, entre em contato!
+                                </p>
+                                
+                                <div class="space-y-6">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center border border-neon-blue/30">
+                                            <i class="fab fa-whatsapp text-xl text-neon-blue"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium text-white">WhatsApp</h4>
+                                            <p class="text-gray-400">+55 12 99129-3155</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center border border-neon-purple/30">
+                                            <i class="fab fa-linkedin text-xl text-neon-purple"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium text-white">LinkedIn</h4>
+                                            <p class="text-gray-400">linkedin.com/in/guilherme-yan-tec</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 flex items-center justify-center border border-neon-cyan/30">
+                                            <i class="fab fa-github text-xl text-neon-cyan"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium text-white">GitHub</h4>
+                                            <p class="text-gray-400">github.com/guiyan10</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-1/2 reveal-element" data-direction="right">
+                        <div class="relative overflow-hidden rounded-xl border border-neon-purple/20 bg-black/50 backdrop-blur-sm p-8">
+                            <div class="absolute inset-0 bg-gradient-to-r from-neon-blue/10 to-neon-purple/10"></div>
+                            <div class="relative">
+                                <h3 class="text-2xl font-bold font-orbitron text-white mb-6">Envie uma mensagem</h3>
+                                
+                                <form class="space-y-6" id="contact-form">
+                                    <div>
+                                        <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Nome</label>
+                                        <input 
+                                            type="text" 
+                                            id="name" 
+                                            class="w-full px-4 py-3 rounded-lg bg-black/50 border border-neon-purple/30 text-white focus:outline-none focus:border-neon-purple focus:ring-1 focus:ring-neon-purple/50"
+                                            placeholder="Seu nome"
+                                        >
+                                    </div>
+                                    
+                                    <div>
+                                        <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                                        <input 
+                                            type="email" 
+                                            id="email" 
+                                            class="w-full px-4 py-3 rounded-lg bg-black/50 border border-neon-purple/30 text-white focus:outline-none focus:border-neon-purple focus:ring-1 focus:ring-neon-purple/50"
+                                            placeholder="seu@email.com"
+                                        >
+                                    </div>
+                                    
+                                    <div>
+                                        <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Mensagem</label>
+                                        <textarea 
+                                            id="message" 
+                                            rows="4"
+                                            class="w-full px-4 py-3 rounded-lg bg-black/50 border border-neon-purple/30 text-white focus:outline-none focus:border-neon-purple focus:ring-1 focus:ring-neon-purple/50"
+                                            placeholder="Sua mensagem"
+                                        ></textarea>
+                                    </div>
+                                    
+                                    <button 
+                                        type="submit"
+                                        class="w-full px-6 py-3 rounded-lg bg-gradient-to-r from-neon-blue to-neon-purple text-white font-medium hover:shadow-glow transition-all duration-300"
                                     >
-                                </div>
-                                
-                                <div>
-                                    <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
-                                    <input 
-                                        type="email" 
-                                        id="email" 
-                                        class="w-full px-4 py-3 rounded-lg bg-black/50 border border-neon-purple/30 text-white focus:outline-none focus:border-neon-purple focus:ring-1 focus:ring-neon-purple/50"
-                                        placeholder="seu@email.com"
-                                    >
-                                </div>
-                                
-                                <div>
-                                    <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Mensagem</label>
-                                    <textarea 
-                                        id="message" 
-                                        rows="4"
-                                        class="w-full px-4 py-3 rounded-lg bg-black/50 border border-neon-purple/30 text-white focus:outline-none focus:border-neon-purple focus:ring-1 focus:ring-neon-purple/50"
-                                        placeholder="Sua mensagem"
-                                    ></textarea>
-                                </div>
-                                
-                                <button 
-                                    type="submit"
-                                    class="w-full px-6 py-3 rounded-lg bg-gradient-to-r from-neon-blue to-neon-purple text-white font-medium hover:shadow-glow transition-all duration-300"
-                                >
-                                    Enviar Mensagem
-                                </button>
-                            </form>
+                                        Enviar Mensagem
+                                    </button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="relative py-8 z-10 border-t border-neon-blue/20">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0">
-                    <p class="text-gray-400">© 2025 Desenvolvido por Guilherme Yan.</p>
-                </div>
-                
-                <div class="flex space-x-6">
-                    <a 
-                        href="https://github.com/guiyan10" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        class="text-gray-400 hover:text-neon-blue transition-colors duration-300"
-                    >
-                        <i class="fab fa-github text-lg"></i>
-                    </a>
-                    <a 
-                        href="https://www.linkedin.com/in/guilherme-yan-tec/" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        class="text-gray-400 hover:text-neon-purple transition-colors duration-300"
-                    >
-                        <i class="fab fa-linkedin text-lg"></i>
-                    </a>
-                    <a 
-                        href="https://api.whatsapp.com/send/?phone=5512991293155&text=Olá%20Guilherme%20Yan&type=phone_number&app_absent=0" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        class="text-gray-400 hover:text-green-400 transition-colors duration-300"
-                    >
-                        <i class="fab fa-whatsapp text-lg"></i>
-                    </a>
+        <!-- Footer -->
+        <footer class="relative py-8 z-10 border-t border-neon-blue/20">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-4 md:mb-0">
+                        <p class="text-gray-400">© 2025 Desenvolvido por Guilherme Yan.</p>
+                    </div>
+                    
+                    <div class="flex space-x-6">
+                        <a 
+                            href="https://github.com/guiyan10" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            class="text-gray-400 hover:text-neon-blue transition-colors duration-300"
+                        >
+                            <i class="fab fa-github text-lg"></i>
+                        </a>
+                        <a 
+                            href="https://www.linkedin.com/in/guilherme-yan-tec/" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            class="text-gray-400 hover:text-neon-purple transition-colors duration-300"
+                        >
+                            <i class="fab fa-linkedin text-lg"></i>
+                        </a>
+                        <a 
+                            href="https://api.whatsapp.com/send/?phone=5512991293155&text=Olá%20Guilherme%20Yan&type=phone_number&app_absent=0" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            class="text-gray-400 hover:text-green-400 transition-colors duration-300"
+                        >
+                            <i class="fab fa-whatsapp text-lg"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
-    <!-- Ícone fixo do WhatsApp -->
-    <a 
-        href="https://api.whatsapp.com/send/?phone=5512991293155&text=Olá%20Guilherme%20Yan&type=phone_number&app_absent=0" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        class="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center shadow-lg hover:shadow-glow-green transition-all duration-300 transform hover:scale-110"
-    >
-        <i class="fab fa-whatsapp text-2xl text-white"></i>
-    </a>
+        <!-- Ícone fixo do WhatsApp -->
+        <a 
+            href="https://api.whatsapp.com/send/?phone=5512991293155&text=Olá%20Guilherme%20Yan&type=phone_number&app_absent=0" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center shadow-lg hover:shadow-glow-green transition-all duration-300 transform hover:scale-110"
+        >
+            <i class="fab fa-whatsapp text-2xl text-white"></i>
+        </a>
 
-    <!-- Botão de voltar ao topo -->
-    <button 
-        id="back-to-top" 
-        class="fixed bottom-6 left-6 z-50 w-12 h-12 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple flex items-center justify-center shadow-lg hover:shadow-glow transition-all duration-300 transform hover:scale-110 opacity-0 pointer-events-none"
-    >
-        <i class="fas fa-arrow-up text-white"></i>
-    </button>
+        <!-- Botão de voltar ao topo -->
+        <button 
+            id="back-to-top" 
+            class="fixed bottom-6 left-6 z-50 w-12 h-12 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple flex items-center justify-center shadow-lg hover:shadow-glow transition-all duration-300 transform hover:scale-110 opacity-0 pointer-events-none"
+        >
+            <i class="fas fa-arrow-up text-white"></i>
+        </button>
 
-    <script src="script.js"></script>
-</body>
-</html>
+        <script src="script.js"></script>
+    </body>
+    </html>
