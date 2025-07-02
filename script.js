@@ -315,3 +315,68 @@ function showCustomAlert(message) {
         setTimeout(() => alertBox.remove(), 500);
     }, 3000);
 }
+
+// Carrossel de Projetos
+document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.getElementById('projectsCarousel');
+    const slides = document.querySelectorAll('.project-slide');
+    const prevButton = document.getElementById('prevProject');
+    const nextButton = document.getElementById('nextProject');
+    const indicators = document.querySelectorAll('.project-indicator');
+    
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+
+    // Função para atualizar o carrossel
+    function updateCarousel() {
+        carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+        
+        // Atualiza os indicadores
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === currentSlide);
+            indicator.classList.toggle('bg-neon-blue', index === currentSlide);
+            indicator.classList.toggle('bg-neon-blue/50', index !== currentSlide);
+        });
+    }
+
+    // Event listeners para os botões
+    prevButton.addEventListener('click', () => {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+    });
+
+    nextButton.addEventListener('click', () => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel();
+    });
+
+    // Event listeners para os indicadores
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            currentSlide = index;
+            updateCarousel();
+        });
+    });
+
+    // Auto-play do carrossel
+    let autoPlayInterval = setInterval(() => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel();
+    }, 5000);
+
+    // Pausa o auto-play quando o mouse está sobre o carrossel
+    carousel.addEventListener('mouseenter', () => {
+        clearInterval(autoPlayInterval);
+    });
+
+    // Retoma o auto-play quando o mouse sai do carrossel
+    carousel.addEventListener('mouseleave', () => {
+        autoPlayInterval = setInterval(() => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }, 5000);
+    });
+
+    // Inicializa o carrossel
+    updateCarousel();
+});

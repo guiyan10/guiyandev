@@ -329,6 +329,37 @@
             right: auto !important;
         }
     }
+
+    /* Estilos do Carrossel */
+    #prevProject, #nextProject {
+        background: linear-gradient(135deg, rgba(77, 168, 218, 0.1), rgba(168, 85, 247, 0.1));
+        border: 1px solid rgba(77, 168, 218, 0.3);
+        backdrop-filter: blur(10px);
+    }
+
+    #prevProject:hover, #nextProject:hover {
+        background: linear-gradient(135deg, rgba(77, 168, 218, 0.2), rgba(168, 85, 247, 0.2));
+        box-shadow: 0 0 20px rgba(77, 168, 218, 0.3);
+    }
+
+    #prevProject {
+        left: -1rem;
+    }
+
+    #nextProject {
+        right: -1rem;
+    }
+
+    @media (max-width: 768px) {
+        #prevProject {
+            left: -0.5rem;
+        }
+        
+        #nextProject {
+            right: -0.5rem;
+        }
+    }
+
 /* Alerta personalizado */
 .custom-alert {
     position: fixed;

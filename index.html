@@ -140,8 +140,8 @@
                     </span>
                 </h1>
                 
-                <p class="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto reveal-element typing-effect" data-delay="600">
-                    Moldando o futuro com tecnologia e inovação.
+                <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto reveal-element typing-effect text-center" data-delay="600">
+                    <span class="block sm:inline">Moldando o futuro</span> <span class="block sm:inline">com tecnologia e inovação.</span>
                 </p>
                 
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal-element" data-delay="800">
@@ -417,74 +417,291 @@
                     <div class="mt-2 h-1 w-20 bg-gradient-to-r from-neon-blue to-neon-purple mx-auto rounded-full"></div>
                 </div>
                 
-                <div class="project-card tilt-card reveal-element">
-                    <div class="relative overflow-hidden rounded-xl border border-neon-purple/20 bg-black/50 backdrop-blur-sm">
-                        <div class="absolute inset-0 bg-gradient-to-r from-neon-blue/10 to-neon-purple/10"></div>
-                        <div class="relative p-8">
-                            <div class="flex flex-col md:flex-row gap-8">
-                                <div class="md:w-1/2">
-                                    <h3 class="text-3xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple mb-4">
-                                        Vann – Transporte Escolar do Futuro
-                                    </h3>
-                                    <p class="text-gray-300 mb-6">
-                                        Uma plataforma revolucionária que redefine o transporte escolar com tecnologia de ponta. Desenvolvido com a Arcis, foi destaque entre os 16 melhores projetos do SENAI e apresentado no evento Senai para o Mundo.
-                                    </p>
-                                    
-                                    <div class="space-y-4 mb-6">
-                                        <div class="flex items-start gap-2">
-                                            <div class="w-6 h-6 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple flex items-center justify-center flex-shrink-0 mt-0.5">
-                                                <i class="fas fa-globe text-xs text-white"></i>
-                                            </div>
-                                            <div>
-                                                <h4 class="font-medium text-white">Geolocalização em tempo real</h4>
-                                                <p class="text-sm text-gray-400">Acompanhamento preciso da localização do transporte</p>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="flex items-start gap-2">
-                                            <div class="w-6 h-6 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple flex items-center justify-center flex-shrink-0 mt-0.5">
-                                                <i class="fas fa-comments text-xs text-white"></i>
-                                            </div>
-                                            <div>
-                                                <h4 class="font-medium text-white">Chat integrado</h4>
-                                                <p class="text-sm text-gray-400">Comunicação direta entre pais, escolas e motoristas</p>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="flex items-start gap-2">
-                                            <div class="w-6 h-6 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple flex items-center justify-center flex-shrink-0 mt-0.5">
-                                                <i class="fas fa-tachometer-alt text-xs text-white"></i>
-                                            </div>
-                                            <div>
-                                                <h4 class="font-medium text-white">Painel de gestão para motoristas</h4>
-                                                <p class="text-sm text-gray-400">Interface intuitiva para gerenciamento de rotas e passageiros</p>
+                <!-- Carrossel Container -->
+                <div class="relative px-16"> <!-- Adicionado padding para acomodar as setas -->
+                    <!-- Botões de Navegação -->
+                    <button id="prevProject" class="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple flex items-center justify-center shadow-lg hover:shadow-glow transition-all duration-300 transform hover:scale-110">
+                        <i class="fas fa-chevron-left text-white"></i>
+                    </button>
+                    <button id="nextProject" class="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple flex items-center justify-center shadow-lg hover:shadow-glow transition-all duration-300 transform hover:scale-110">
+                        <i class="fas fa-chevron-right text-white"></i>
+                    </button>
+
+                    <!-- Carrossel -->
+                    <div class="overflow-hidden">
+                        <div id="projectsCarousel" class="flex transition-transform duration-500 ease-in-out">
+                            <!-- Projeto 1: Vann -->
+                            <div class="project-slide w-full flex-shrink-0">
+                                <div class="project-card tilt-card reveal-element">
+                                    <div class="relative overflow-hidden rounded-xl border border-neon-purple/20 bg-black/50 backdrop-blur-sm">
+                                        <div class="absolute inset-0 bg-gradient-to-r from-neon-blue/10 to-neon-purple/10"></div>
+                                        <div class="relative p-8">
+                                            <div class="flex flex-col md:flex-row gap-8">
+                                                <div class="md:w-1/2">
+                                                    <h3 class="text-3xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple mb-4">
+                                                        Vann – Transporte Escolar do Futuro
+                                                    </h3>
+                                                    <p class="text-gray-300 mb-6">
+                                                        Uma plataforma revolucionária que redefine o transporte escolar com tecnologia de ponta. Desenvolvido com a Arcis, foi destaque entre os 16 melhores projetos do SENAI e apresentado no evento Senai para o Mundo.
+                                                    </p>
+                                                    
+                                                    <div class="space-y-4 mb-6">
+                                                        <div class="flex items-start gap-2">
+                                                            <div class="w-6 h-6 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple flex items-center justify-center flex-shrink-0 mt-0.5">
+                                                                <i class="fas fa-globe text-xs text-white"></i>
+                                                            </div>
+                                                            <div>
+                                                                <h4 class="font-medium text-white">Geolocalização em tempo real</h4>
+                                                                <p class="text-sm text-gray-400">Acompanhamento preciso da localização do transporte</p>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="flex items-start gap-2">
+                                                            <div class="w-6 h-6 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple flex items-center justify-center flex-shrink-0 mt-0.5">
+                                                                <i class="fas fa-comments text-xs text-white"></i>
+                                                            </div>
+                                                            <div>
+                                                                <h4 class="font-medium text-white">Chat integrado</h4>
+                                                                <p class="text-sm text-gray-400">Comunicação direta entre pais, escolas e motoristas</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <a href="https://api.whatsapp.com/send/?phone=5512991293155&text=Gostaria%20de%20um%20orçamento%20para%20um%20projeto&type=phone_number&app_absent=0" target="_blank">
+                                                        <button class="px-6 py-3 rounded-lg bg-gradient-to-r from-neon-blue to-neon-purple text-white font-medium hover:shadow-glow transition-all duration-300 transform hover:scale-105">
+                                                            Faça o seu Projeto
+                                                        </button>
+                                                    </a>
+                                                </div>
+                                                
+                                                <div class="md:w-1/2">
+                                                    <div class="relative rounded-lg overflow-hidden border border-neon-purple/30 shadow-glow-purple">
+                                                        <img src="assets/vann.jpeg" alt="Projeto Vann" class="w-full h-auto">
+                                                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                                                        <div class="absolute bottom-4 left-4 flex items-center gap-2">
+                                                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-neon-blue/20 border border-neon-blue/30 text-neon-blue">
+                                                                Mobile
+                                                            </span>
+                                                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-neon-purple/20 border border-neon-purple/30 text-neon-purple">
+                                                                Web
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="https://api.whatsapp.com/send/?phone=5512991293155&text=Gostaria%20de%20um%20orçamento%20para%20um%20projeto&type=phone_number&app_absent=0" target="_blank">
-                                        <button class="px-6 py-3 rounded-lg bg-gradient-to-r from-neon-blue to-neon-purple text-white font-medium hover:shadow-glow transition-all duration-300 transform hover:scale-105">
-                                            Faça o seu Projeto
-                                        </button>
-                                    </a>
-                                    
                                 </div>
-                                
-                                <div class="md:w-1/2">
-                                    <div class="relative rounded-lg overflow-hidden border border-neon-purple/30 shadow-glow-purple">
-                                        <img src="assets/vann.jpeg" alt="Projeto Vann" class="w-full h-auto">
-                                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                                        <div class="absolute bottom-4 left-4 flex items-center gap-2">
-                                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-neon-blue/20 border border-neon-blue/30 text-neon-blue">
-                                                Mobile
-                                            </span>
-                                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-neon-purple/20 border border-neon-purple/30 text-neon-purple">
-                                                Web
-                                            </span>
+                            </div>
+
+                            <!-- Projeto 2: E-commerce -->
+                            <div class="project-slide w-full flex-shrink-0">
+                                <div class="project-card tilt-card reveal-element">
+                                    <div class="relative overflow-hidden rounded-xl border border-neon-purple/20 bg-black/50 backdrop-blur-sm">
+                                        <div class="absolute inset-0 bg-gradient-to-r from-neon-blue/10 to-neon-purple/10"></div>
+                                        <div class="relative p-8">
+                                            <div class="flex flex-col md:flex-row gap-8">
+                                                <div class="md:w-1/2">
+                                                    <h3 class="text-3xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple mb-4">
+                                                        E-commerce Premium
+                                                    </h3>
+                                                    <p class="text-gray-300 mb-6">
+                                                        Plataforma de e-commerce completa com sistema de pagamentos, gestão de estoque e dashboard administrativo. Desenvolvido com as mais modernas tecnologias do mercado.
+                                                    </p>
+                                                    
+                                                    <div class="space-y-4 mb-6">
+                                                        <div class="flex items-start gap-2">
+                                                            <div class="w-6 h-6 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple flex items-center justify-center flex-shrink-0 mt-0.5">
+                                                                <i class="fas fa-shopping-cart text-xs text-white"></i>
+                                                            </div>
+                                                            <div>
+                                                                <h4 class="font-medium text-white">Sistema de Pagamentos</h4>
+                                                                <p class="text-sm text-gray-400">Integração com múltiplas formas de pagamento</p>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="flex items-start gap-2">
+                                                            <div class="w-6 h-6 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple flex items-center justify-center flex-shrink-0 mt-0.5">
+                                                                <i class="fas fa-chart-line text-xs text-white"></i>
+                                                            </div>
+                                                            <div>
+                                                                <h4 class="font-medium text-white">Dashboard Administrativo</h4>
+                                                                <p class="text-sm text-gray-400">Controle total sobre vendas e estoque</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <a href="https://api.whatsapp.com/send/?phone=5512991293155&text=Gostaria%20de%20um%20orçamento%20para%20um%20projeto&type=phone_number&app_absent=0" target="_blank">
+                                                        <button class="px-6 py-3 rounded-lg bg-gradient-to-r from-neon-blue to-neon-purple text-white font-medium hover:shadow-glow transition-all duration-300 transform hover:scale-105">
+                                                            Faça o seu Projeto
+                                                        </button>
+                                                    </a>
+                                                </div>
+                                                
+                                                <div class="md:w-1/2">
+                                                    <div class="relative rounded-lg overflow-hidden border border-neon-purple/30 shadow-glow-purple">
+                                                        <img src="assets/corredorocha.png" alt="Projeto E-commerce" class="w-full h-auto">
+                                                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                                                        <div class="absolute bottom-4 left-4 flex items-center gap-2">
+                                                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-neon-blue/20 border border-neon-blue/30 text-neon-blue">
+                                                                Web
+                                                            </span>
+                                                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-neon-purple/20 border border-neon-purple/30 text-neon-purple">
+                                                                Mobile
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Projeto 3: App de Gestão -->
+                            <div class="project-slide w-full flex-shrink-0">
+                                <div class="project-card tilt-card reveal-element">
+                                    <div class="relative overflow-hidden rounded-xl border border-neon-purple/20 bg-black/50 backdrop-blur-sm">
+                                        <div class="absolute inset-0 bg-gradient-to-r from-neon-blue/10 to-neon-purple/10"></div>
+                                        <div class="relative p-8">
+                                            <div class="flex flex-col md:flex-row gap-8">
+                                                <div class="md:w-1/2">
+                                                    <h3 class="text-3xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple mb-4">
+                                                        Site Institucional Completo
+                                                    </h3>
+                                                    <p class="text-gray-300 mb-6">
+                                                        Desenvolvimento de sites institucionais modernos, responsivos e otimizados para empresas de todos os portes. Inclui páginas institucionais, blog, formulário de contato, integração com redes sociais e painel administrativo para fácil atualização de conteúdo.
+                                                    </p>
+                                                    <div class="space-y-4 mb-6">
+                                                        <div class="flex items-start gap-2">
+                                                            <div class="w-6 h-6 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple flex items-center justify-center flex-shrink-0 mt-0.5">
+                                                                <i class="fas fa-desktop text-xs text-white"></i>
+                                                            </div>
+                                                            <div>
+                                                                <h4 class="font-medium text-white">Design Responsivo</h4>
+                                                                <p class="text-sm text-gray-400">Visual profissional em todos os dispositivos</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="flex items-start gap-2">
+                                                            <div class="w-6 h-6 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple flex items-center justify-center flex-shrink-0 mt-0.5">
+                                                                <i class="fas fa-search text-xs text-white"></i>
+                                                            </div>
+                                                            <div>
+                                                                <h4 class="font-medium text-white">SEO Otimizado</h4>
+                                                                <p class="text-sm text-gray-400">Melhor posicionamento no Google</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="flex items-start gap-2">
+                                                            <div class="w-6 h-6 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple flex items-center justify-center flex-shrink-0 mt-0.5">
+                                                                <i class="fas fa-cogs text-xs text-white"></i>
+                                                            </div>
+                                                            <div>
+                                                                <h4 class="font-medium text-white">Painel Administrativo</h4>
+                                                                <p class="text-sm text-gray-400">Atualize conteúdos facilmente</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="flex items-start gap-2">
+                                                            <div class="w-6 h-6 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple flex items-center justify-center flex-shrink-0 mt-0.5">
+                                                                <i class="fas fa-share-alt text-xs text-white"></i>
+                                                            </div>
+                                                            <div>
+                                                                <h4 class="font-medium text-white">Integração com Redes Sociais</h4>
+                                                                <p class="text-sm text-gray-400">Conecte seu site ao WhatsApp, Instagram e mais</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <a href="https://api.whatsapp.com/send/?phone=5512991293155&text=Gostaria%20de%20um%20orçamento%20para%20um%20projeto&type=phone_number&app_absent=0" target="_blank">
+                                                        <button class="px-6 py-3 rounded-lg bg-gradient-to-r from-neon-blue to-neon-purple text-white font-medium hover:shadow-glow transition-all duration-300 transform hover:scale-105">
+                                                            Faça o seu Projeto
+                                                        </button>
+                                                    </a>
+                                                </div>
+                                                <div class="md:w-1/2">
+                                                    <div class="relative rounded-lg overflow-hidden border border-neon-purple/30 shadow-glow-purple">
+                                                        <img src="assets/organico.png" alt="Site Institucional Completo" class="w-full h-auto">
+                                                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                                                        <div class="absolute bottom-4 left-4 flex items-center gap-2">
+                                                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-neon-blue/20 border border-neon-blue/30 text-neon-blue">
+                                                                Web
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Projeto 4: Portal Educacional -->
+                            <div class="project-slide w-full flex-shrink-0">
+                                <div class="project-card tilt-card reveal-element">
+                                    <div class="relative overflow-hidden rounded-xl border border-neon-purple/20 bg-black/50 backdrop-blur-sm">
+                                        <div class="absolute inset-0 bg-gradient-to-r from-neon-blue/10 to-neon-purple/10"></div>
+                                        <div class="relative p-8">
+                                            <div class="flex flex-col md:flex-row gap-8">
+                                                <div class="md:w-1/2">
+                                                    <h3 class="text-3xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple mb-4">
+                                                        Portal Educacional
+                                                    </h3>
+                                                    <p class="text-gray-300 mb-6">
+                                                        Plataforma educacional completa com sistema de aulas online, exercícios interativos e acompanhamento de desempenho. Ideal para instituições de ensino.
+                                                    </p>
+                                                    
+                                                    <div class="space-y-4 mb-6">
+                                                        <div class="flex items-start gap-2">
+                                                            <div class="w-6 h-6 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple flex items-center justify-center flex-shrink-0 mt-0.5">
+                                                                <i class="fas fa-video text-xs text-white"></i>
+                                                            </div>
+                                                            <div>
+                                                                <h4 class="font-medium text-white">Aulas Online</h4>
+                                                                <p class="text-sm text-gray-400">Sistema de videoconferência integrado</p>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="flex items-start gap-2">
+                                                            <div class="w-6 h-6 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple flex items-center justify-center flex-shrink-0 mt-0.5">
+                                                                <i class="fas fa-tasks text-xs text-white"></i>
+                                                            </div>
+                                                            <div>
+                                                                <h4 class="font-medium text-white">Exercícios Interativos</h4>
+                                                                <p class="text-sm text-gray-400">Conteúdo dinâmico e avaliações online</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <a href="https://api.whatsapp.com/send/?phone=5512991293155&text=Gostaria%20de%20um%20orçamento%20para%20um%20projeto&type=phone_number&app_absent=0" target="_blank">
+                                                        <button class="px-6 py-3 rounded-lg bg-gradient-to-r from-neon-blue to-neon-purple text-white font-medium hover:shadow-glow transition-all duration-300 transform hover:scale-105">
+                                                            Faça o seu Projeto
+                                                        </button>
+                                                    </a>
+                                                </div>
+                                                
+                                                <div class="md:w-1/2">
+                                                    <div class="relative rounded-lg overflow-hidden border border-neon-purple/30 shadow-glow-purple">
+                                                        <img src="assets/CODEQUEST.png" alt="Projeto Educacional" class="w-full h-auto">
+                                                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                                                        <div class="absolute bottom-4 left-4 flex items-center gap-2">
+                                                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-neon-blue/20 border border-neon-blue/30 text-neon-blue">
+                                                                Web
+                                                            </span>
+                                                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-neon-purple/20 border border-neon-purple/30 text-neon-purple">
+                                                                Mobile
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <!-- Indicadores -->
+                    <div class="flex justify-center mt-8 gap-2">
+                        <button class="w-3 h-3 rounded-full bg-neon-blue/50 hover:bg-neon-blue transition-colors duration-300 project-indicator active"></button>
+                        <button class="w-3 h-3 rounded-full bg-neon-blue/50 hover:bg-neon-blue transition-colors duration-300 project-indicator"></button>
+                        <button class="w-3 h-3 rounded-full bg-neon-blue/50 hover:bg-neon-blue transition-colors duration-300 project-indicator"></button>
+                        <button class="w-3 h-3 rounded-full bg-neon-blue/50 hover:bg-neon-blue transition-colors duration-300 project-indicator"></button>
                     </div>
                 </div>
             </div>
@@ -933,7 +1150,7 @@
                                         </div>
                                         <div>
                                             <h4 class="font-medium text-white">WhatsApp</h4>
-                                            <p class="text-gray-400">+55 12 99129-3155</p>
+                                            <a href="https://api.whatsapp.com/send/?phone=5512991293155&text=Olá%20Guilherme%20Yan&type=phone_number&app_absent=0" target="_blank" class="text-gray-400 hover:text-neon-blue transition-colors duration-300">+55 12 99129-3155</a>
                                         </div>
                                     </div>
                                     
@@ -943,7 +1160,7 @@
                                         </div>
                                         <div>
                                             <h4 class="font-medium text-white">LinkedIn</h4>
-                                            <p class="text-gray-400">linkedin.com/in/guilherme-yan-tec</p>
+                                            <a href="https://www.linkedin.com/in/guilherme-yan-tec/" target="_blank" class="text-gray-400 hover:text-neon-purple transition-colors duration-300">linkedin.com/in/guilherme-yan-tec</a>
                                         </div>
                                     </div>
                                     
@@ -953,7 +1170,7 @@
                                         </div>
                                         <div>
                                             <h4 class="font-medium text-white">GitHub</h4>
-                                            <p class="text-gray-400">github.com/guiyan10</p>
+                                            <a href="https://github.com/guiyan10" target="_blank" class="text-gray-400 hover:text-neon-cyan transition-colors duration-300">github.com/guiyan10</a>
                                         </div>
                                     </div>
                                 </div>
