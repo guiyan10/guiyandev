@@ -48,8 +48,56 @@
         <link rel="stylesheet" href="styles.css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <style>
+        /* Estilo customizado para o seletor de idioma */
+        .lang-switcher {
+            background: linear-gradient(90deg, #4DA8DA 0%, #A855F7 100%);
+            border: 1.5px solid #A855F7;
+            box-shadow: 0 0 12px 2px #A855F7AA, 0 0 4px 1px #4DA8DA99;
+            border-radius: 9999px;
+            padding: 0.25rem 1.2rem 0.25rem 0.7rem;
+            color: #fff;
+            font-family: 'Orbitron', 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            outline: none;
+            transition: box-shadow 0.2s, border 0.2s;
+            appearance: none;
+            position: relative;
+        }
+        .lang-switcher:hover, .lang-switcher:focus {
+            box-shadow: 0 0 18px 4px #A855F7CC, 0 0 8px 2px #4DA8DAAA;
+            border-color: #FF70A6;
+        }
+        .lang-switcher option {
+            color: #222;
+            background: #fff;
+        }
+        .lang-switcher-flag {
+            margin-right: 0.5em;
+        }
+        .lang-switcher-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+            position: relative;
+        }
+        .lang-switcher-icon {
+            font-size: 1.2em;
+            vertical-align: middle;
+        }
+        </style>
     </head>
     <body class="font-montserrat bg-black text-white overflow-x-hidden">
+        <!-- Language Selector -->
+        <div class="fixed top-4 right-4 z-[10000] lang-switcher-wrapper">
+            <i class="lang-switcher-icon fi fi-br-globe"></i>
+            <select id="lang-selector" class="lang-switcher">
+                <option value="pt">🇧🇷 Português</option>
+                <option value="en">🇺🇸 English</option>
+            </select>
+        </div>
+
         <!-- Preloader -->
         <div id="preloader" class="fixed inset-0 z-[9999] flex items-center justify-center bg-black">
             <div class="relative">
@@ -76,13 +124,13 @@
                 <!-- Links do menu -->
                 <div class="hidden md:flex items-center space-x-6" id="nav-menu">
                     <div class="space-x-6">
-                        <a href="#home" class="nav-link relative px-2 py-1 text-gray-300 hover:text-white transition-colors duration-300" data-section="home">Início</a>
-                        <a href="#about" class="nav-link relative px-2 py-1 text-gray-300 hover:text-white transition-colors duration-300" data-section="about">Sobre</a>
-                        <a href="#skills" class="nav-link relative px-2 py-1 text-gray-300 hover:text-white transition-colors duration-300" data-section="skills">Habilidades</a>
-                        <a href="#projects" class="nav-link relative px-2 py-1 text-gray-300 hover:text-white transition-colors duration-300" data-section="projects">Projetos</a>
-                        <a href="#timeline" class="nav-link relative px-2 py-1 text-gray-300 hover:text-white transition-colors duration-300" data-section="timeline">Linha do Tempo</a>
-                        <a href="#certifications" class="nav-link relative px-2 py-1 text-gray-300 hover:text-white transition-colors duration-300" data-section="certifications">Certificações</a>
-                        <a href="#contact" class="nav-link relative px-2 py-1 text-gray-300 hover:text-white transition-colors duration-300" data-section="contact">Contato</a>
+                        <a href="#home" class="nav-link relative px-2 py-1 text-gray-300 hover:text-white transition-colors duration-300" data-section="home" data-i18n="nav_inicio">Início</a>
+                        <a href="#about" class="nav-link relative px-2 py-1 text-gray-300 hover:text-white transition-colors duration-300" data-section="about" data-i18n="nav_sobre">Sobre</a>
+                        <a href="#skills" class="nav-link relative px-2 py-1 text-gray-300 hover:text-white transition-colors duration-300" data-section="skills" data-i18n="nav_habilidades">Habilidades</a>
+                        <a href="#projects" class="nav-link relative px-2 py-1 text-gray-300 hover:text-white transition-colors duration-300" data-section="projects" data-i18n="nav_projetos">Projetos</a>
+                        <a href="#timeline" class="nav-link relative px-2 py-1 text-gray-300 hover:text-white transition-colors duration-300" data-section="timeline" data-i18n="nav_timeline">Linha do Tempo</a>
+                        <a href="#certifications" class="nav-link relative px-2 py-1 text-gray-300 hover:text-white transition-colors duration-300" data-section="certifications" data-i18n="nav_certificacoes">Certificações</a>
+                        <a href="#contact" class="nav-link relative px-2 py-1 text-gray-300 hover:text-white transition-colors duration-300" data-section="contact" data-i18n="nav_contato">Contato</a>
                     </div>
                     
                     <!-- Social Media Icons in Navbar -->
@@ -129,26 +177,22 @@
             
             <div class="text-center z-10 px-4 reveal-element">
                 <div class="mb-4 reveal-element" data-delay="200">
-                    <span class="px-4 py-1 rounded-full text-sm font-medium bg-gradient-to-r from-neon-blue/20 to-neon-purple/20 border border-neon-blue/30 text-neon-blue inline-block">
-                        Desenvolvedor Full Stack
-                    </span>
+                    <span class="px-4 py-1 rounded-full text-sm font-medium bg-gradient-to-r from-neon-blue/20 to-neon-purple/20 border border-neon-blue/30 text-neon-blue inline-block" data-i18n="hero_dev">Desenvolvedor Full Stack</span>
                 </div>
                 
-                <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold font-orbitron mb-6 reveal-element" data-delay="400">
+                <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold font-orbitron mb-6 reveal-element" data-delay="400" data-i18n="hero_nome">
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-white to-neon-purple">
                         Guilherme Yan
                     </span>
                 </h1>
                 
-                <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto reveal-element typing-effect text-center" data-delay="600">
+                <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto reveal-element typing-effect text-center" data-delay="600" data-i18n="hero_frase">
                     <span class="block sm:inline">Moldando o futuro</span> <span class="block sm:inline">com tecnologia e inovação.</span>
                 </p>
                 
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal-element" data-delay="800">
-                    <a href="#projects" class="px-8 py-4 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple text-white font-medium hover:shadow-glow transition-all duration-300 transform hover:scale-105 cyber-button">
-                        Ver Projetos
-                    </a>
-                    <a href="assets/Currículo Guilherme Yan Completo 2025.pdf" download class="px-8 py-4 rounded-full bg-gradient-to-r from-neon-purple to-neon-pink text-white font-medium hover:shadow-glow transition-all duration-300 transform hover:scale-105 cyber-button flex items-center gap-2">
+                    <a href="#projects" class="px-8 py-4 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple text-white font-medium hover:shadow-glow transition-all duration-300 transform hover:scale-105 cyber-button" data-i18n="ver_projetos">Ver Projetos</a>
+                    <a href="assets/Currículo Guilherme Yan Completo 2025 AT (2).pdf" download class="px-8 py-4 rounded-full bg-gradient-to-r from-neon-purple to-neon-pink text-white font-medium hover:shadow-glow transition-all duration-300 transform hover:scale-105 cyber-button flex items-center gap-2" data-i18n="baixar_cv">
                         <i class="fas fa-download"></i>
                         Baixar CV
                     </a>
@@ -169,9 +213,7 @@
         <section id="about" class="py-20 relative z-10">
             <div class="max-w-6xl mx-auto px-4">
                 <div class="text-center mb-16 reveal-element">
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">
-                        Sobre Mim
-                    </h2>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple" data-i18n="sobre_titulo">Sobre Mim</h2>
                     <div class="mt-2 h-1 w-20 bg-gradient-to-r from-neon-blue to-neon-purple mx-auto rounded-full"></div>
                 </div>
                 
@@ -192,8 +234,8 @@
                         <div class="space-y-6">
                             <div class="relative">
                                 <div class="absolute -left-2 sm:-left-4 top-0 h-full w-0.5 bg-gradient-to-b from-neon-blue to-neon-purple"></div>
-                                <h3 class="text-xl sm:text-2xl font-bold font-orbitron text-white mb-3 sm:mb-4">Desenvolvedor Full Stack</h3>
-                                <p class="text-gray-300 leading-relaxed text-sm sm:text-base px-2 sm:px-0">
+                                <h3 class="text-xl sm:text-2xl font-bold font-orbitron text-white mb-3 sm:mb-4" data-i18n="sobre_subtitulo">Desenvolvedor Full Stack</h3>
+                                <p class="text-gray-300 leading-relaxed text-sm sm:text-base px-2 sm:px-0" data-i18n="sobre_texto">
                                     Sou um apaixonado por tecnologia, dedicado a transformar ideias em soluções digitais que fazem a diferença. Com tecnologias em Front-End, Back-End e Cloud Computing, meu foco é criar sistemas robustos, escaláveis e visualmente impactantes, sempre seguindo os princípios do Clean Code.
                                 </p>
                             </div>
@@ -226,9 +268,7 @@
         <section id="skills" class="py-20 bg-space-blue/30 relative z-10">
             <div class="max-w-6xl mx-auto px-4">
                 <div class="text-center mb-16 reveal-element">
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">
-                        Habilidades
-                    </h2>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple" data-i18n="habilidades_titulo">Habilidades</h2>
                     <div class="mt-2 h-1 w-20 bg-gradient-to-r from-neon-blue to-neon-purple mx-auto rounded-full"></div>
                 </div>
                 
@@ -325,7 +365,7 @@
                     <div class="relative overflow-hidden rounded-xl border border-neon-purple/20 bg-black/50 backdrop-blur-sm">
                         <div class="absolute inset-0 bg-gradient-to-r from-neon-blue/10 to-neon-purple/10"></div>
                         <div class="relative p-8">
-                            <h3 class="text-2xl font-bold font-orbitron text-white mb-6">Tecnologias</h3>
+                            <h3 class="text-2xl font-bold font-orbitron text-white mb-6" data-i18n="tecnologias_titulo">Tecnologias</h3>
                             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
                                 
                                 <div class="tech-icon">
@@ -411,9 +451,7 @@
         <section id="projects" class="py-20 relative z-10">
             <div class="max-w-6xl mx-auto px-4">
                 <div class="text-center mb-16 reveal-element">
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">
-                        Projetos
-                    </h2>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple" data-i18n="projetos_titulo">Projetos</h2>
                     <div class="mt-2 h-1 w-20 bg-gradient-to-r from-neon-blue to-neon-purple mx-auto rounded-full"></div>
                 </div>
                 
@@ -438,12 +476,8 @@
                                         <div class="relative p-8">
                                             <div class="flex flex-col md:flex-row gap-8">
                                                 <div class="md:w-1/2">
-                                                    <h3 class="text-3xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple mb-4">
-                                                        Vann – Transporte Escolar do Futuro
-                                                    </h3>
-                                                    <p class="text-gray-300 mb-6">
-                                                        Uma plataforma revolucionária que redefine o transporte escolar com tecnologia de ponta. Desenvolvido com a Arcis, foi destaque entre os 16 melhores projetos do SENAI e apresentado no evento Senai para o Mundo.
-                                                    </p>
+                                                    <h3 class="text-3xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple mb-4" data-i18n="project1_title">Vann – Transporte Escolar do Futuro</h3>
+                                                    <p class="text-gray-300 mb-6" data-i18n="project1_desc">Uma plataforma revolucionária que redefine o transporte escolar com tecnologia de ponta. Desenvolvido com a Arcis, foi destaque entre os 16 melhores projetos do SENAI e apresentado no evento Senai para o Mundo.</p>
                                                     
                                                     <div class="space-y-4 mb-6">
                                                         <div class="flex items-start gap-2">
@@ -451,8 +485,8 @@
                                                                 <i class="fas fa-globe text-xs text-white"></i>
                                                             </div>
                                                             <div>
-                                                                <h4 class="font-medium text-white">Geolocalização em tempo real</h4>
-                                                                <p class="text-sm text-gray-400">Acompanhamento preciso da localização do transporte</p>
+                                                                <h4 class="font-medium text-white" data-i18n="project1_feat1_title">Geolocalização em tempo real</h4>
+                                                                <p class="text-sm text-gray-400" data-i18n="project1_feat1_desc">Acompanhamento preciso da localização do transporte</p>
                                                             </div>
                                                         </div>
                                                         
@@ -461,8 +495,8 @@
                                                                 <i class="fas fa-comments text-xs text-white"></i>
                                                             </div>
                                                             <div>
-                                                                <h4 class="font-medium text-white">Chat integrado</h4>
-                                                                <p class="text-sm text-gray-400">Comunicação direta entre pais, escolas e motoristas</p>
+                                                                <h4 class="font-medium text-white" data-i18n="project1_feat2_title">Chat integrado</h4>
+                                                                <p class="text-sm text-gray-400" data-i18n="project1_feat2_desc">Comunicação direta entre pais, escolas e motoristas</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -478,12 +512,8 @@
                                                         <img src="assets/vann.jpeg" alt="Projeto Vann" class="w-full h-auto">
                                                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                                                         <div class="absolute bottom-4 left-4 flex items-center gap-2">
-                                                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-neon-blue/20 border border-neon-blue/30 text-neon-blue">
-                                                                Mobile
-                                                            </span>
-                                                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-neon-purple/20 border border-neon-purple/30 text-neon-purple">
-                                                                Web
-                                                            </span>
+                                                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-neon-blue/20 border border-neon-blue/30 text-neon-blue" data-i18n="project1_tags">Mobile, Web</span>
+                                                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-neon-purple/20 border border-neon-purple/30 text-neon-purple" style="display:none"></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -501,12 +531,8 @@
                                         <div class="relative p-8">
                                             <div class="flex flex-col md:flex-row gap-8">
                                                 <div class="md:w-1/2">
-                                                    <h3 class="text-3xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple mb-4">
-                                                        E-commerce Premium
-                                                    </h3>
-                                                    <p class="text-gray-300 mb-6">
-                                                        Plataforma de e-commerce completa com sistema de pagamentos, gestão de estoque e dashboard administrativo. Desenvolvido com as mais modernas tecnologias do mercado.
-                                                    </p>
+                                                    <h3 class="text-3xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple mb-4" data-i18n="project2_title">E-commerce Premium</h3>
+                                                    <p class="text-gray-300 mb-6" data-i18n="project2_desc">Plataforma de e-commerce completa com sistema de pagamentos, gestão de estoque e dashboard administrativo. Desenvolvido com as mais modernas tecnologias do mercado.</p>
                                                     
                                                     <div class="space-y-4 mb-6">
                                                         <div class="flex items-start gap-2">
@@ -514,8 +540,8 @@
                                                                 <i class="fas fa-shopping-cart text-xs text-white"></i>
                                                             </div>
                                                             <div>
-                                                                <h4 class="font-medium text-white">Sistema de Pagamentos</h4>
-                                                                <p class="text-sm text-gray-400">Integração com múltiplas formas de pagamento</p>
+                                                                <h4 class="font-medium text-white" data-i18n="project2_feat1_title">Sistema de Pagamentos</h4>
+                                                                <p class="text-sm text-gray-400" data-i18n="project2_feat1_desc">Integração com múltiplas formas de pagamento</p>
                                                             </div>
                                                         </div>
                                                         
@@ -524,8 +550,8 @@
                                                                 <i class="fas fa-chart-line text-xs text-white"></i>
                                                             </div>
                                                             <div>
-                                                                <h4 class="font-medium text-white">Dashboard Administrativo</h4>
-                                                                <p class="text-sm text-gray-400">Controle total sobre vendas e estoque</p>
+                                                                <h4 class="font-medium text-white" data-i18n="project2_feat2_title">Dashboard Administrativo</h4>
+                                                                <p class="text-sm text-gray-400" data-i18n="project2_feat2_desc">Controle total sobre vendas e estoque</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -541,12 +567,8 @@
                                                         <img src="assets/corredorocha.png" alt="Projeto E-commerce" class="w-full h-auto">
                                                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                                                         <div class="absolute bottom-4 left-4 flex items-center gap-2">
-                                                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-neon-blue/20 border border-neon-blue/30 text-neon-blue">
-                                                                Web
-                                                            </span>
-                                                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-neon-purple/20 border border-neon-purple/30 text-neon-purple">
-                                                                Mobile
-                                                            </span>
+                                                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-neon-blue/20 border border-neon-blue/30 text-neon-blue" data-i18n="project2_tags">Web, Mobile</span>
+                                                            <span class="px-3 py-1 rounded-full text-xs font-medium ¢bg-neon-purple/20 border border-neon-purple/30 text-neon-purple" style="display:none"></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -619,9 +641,7 @@
                                                         <img src="assets/organico.png" alt="Site Institucional Completo" class="w-full h-auto">
                                                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                                                         <div class="absolute bottom-4 left-4 flex items-center gap-2">
-                                                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-neon-blue/20 border border-neon-blue/30 text-neon-blue">
-                                                                Web
-                                                            </span>
+                                                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-neon-blue/20 border border-neon-blue/30 text-neon-blue" data-i18n="project3_tags">Web</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -639,12 +659,8 @@
                                         <div class="relative p-8">
                                             <div class="flex flex-col md:flex-row gap-8">
                                                 <div class="md:w-1/2">
-                                                    <h3 class="text-3xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple mb-4">
-                                                        Portal Educacional
-                                                    </h3>
-                                                    <p class="text-gray-300 mb-6">
-                                                        Plataforma educacional completa com sistema de aulas online, exercícios interativos e acompanhamento de desempenho. Ideal para instituições de ensino.
-                                                    </p>
+                                                    <h3 class="text-3xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple mb-4" data-i18n="project4_title">Portal Educacional</h3>
+                                                    <p class="text-gray-300 mb-6" data-i18n="project4_desc">Plataforma educacional completa com sistema de aulas online, exercícios interativos e acompanhamento de desempenho. Ideal para instituições de ensino.</p>
                                                     
                                                     <div class="space-y-4 mb-6">
                                                         <div class="flex items-start gap-2">
@@ -652,8 +668,8 @@
                                                                 <i class="fas fa-video text-xs text-white"></i>
                                                             </div>
                                                             <div>
-                                                                <h4 class="font-medium text-white">Aulas Online</h4>
-                                                                <p class="text-sm text-gray-400">Sistema de videoconferência integrado</p>
+                                                                <h4 class="font-medium text-white" data-i18n="project4_feat1_title">Aulas Online</h4>
+                                                                <p class="text-sm text-gray-400" data-i18n="project4_feat1_desc">Sistema de videoconferência integrado</p>
                                                             </div>
                                                         </div>
                                                         
@@ -662,8 +678,8 @@
                                                                 <i class="fas fa-tasks text-xs text-white"></i>
                                                             </div>
                                                             <div>
-                                                                <h4 class="font-medium text-white">Exercícios Interativos</h4>
-                                                                <p class="text-sm text-gray-400">Conteúdo dinâmico e avaliações online</p>
+                                                                <h4 class="font-medium text-white" data-i18n="project4_feat2_title">Exercícios Interativos</h4>
+                                                                <p class="text-sm text-gray-400" data-i18n="project4_feat2_desc">Conteúdo dinâmico e avaliações online</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -679,12 +695,8 @@
                                                         <img src="assets/CODEQUEST.png" alt="Projeto Educacional" class="w-full h-auto">
                                                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                                                         <div class="absolute bottom-4 left-4 flex items-center gap-2">
-                                                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-neon-blue/20 border border-neon-blue/30 text-neon-blue">
-                                                                Web
-                                                            </span>
-                                                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-neon-purple/20 border border-neon-purple/30 text-neon-purple">
-                                                                Mobile
-                                                            </span>
+                                                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-neon-blue/20 border border-neon-blue/30 text-neon-blue" data-i18n="project4_tags">Web, Mobile</span>
+                                                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-neon-purple/20 border border-neon-purple/30 text-neon-purple" style="display:none"></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -711,9 +723,7 @@
         <section id="timeline" class="py-20 bg-space-blue/30 relative z-10">
             <div class="max-w-6xl mx-auto px-4">
                 <div class="text-center mb-16 reveal-element">
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">
-                        Linha do Tempo
-                    </h2>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple" data-i18n="timeline_title">Linha do Tempo</h2>
                     <div class="mt-2 h-1 w-20 bg-gradient-to-r from-neon-blue to-neon-purple mx-auto rounded-full"></div>
                 </div>
                 
@@ -725,11 +735,9 @@
                         <!-- Timeline Item 1 -->
                         <div class="flex flex-col md:flex-row reveal-element" data-delay="100">
                             <div class="md:w-1/2 md:text-right md:pr-6 sm:pr-8 md:pr-12 mb-6 sm:mb-8 md:mb-0 px-4 sm:px-0">
-                                <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-blue/20 border border-neon-blue/30 text-neon-blue mb-2">
-                                    2023-2024
-                                </span>
-                                <h3 class="text-lg sm:text-xl md:text-2xl font-bold font-orbitron text-white mb-2">Técnico em Desenvolvimento de Sistemas (SENAI)</h3>
-                                <p class="text-gray-300 text-sm sm:text-base">Concluí o curso técnico em Desenvolvimento de Sistemas no SENAI, adquirindo conhecimentos fundamentais em programação, desenvolvimento web e boas práticas de software.</p>
+                                <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-blue/20 border border-neon-blue/30 text-neon-blue mb-2" data-i18n="timeline1_date">2023-2024</span>
+                                <h3 class="text-lg sm:text-xl md:text-2xl font-bold font-orbitron text-white mb-2" data-i18n="timeline1_title">Técnico em Desenvolvimento de Sistemas (SENAI)</h3>
+                                <p class="text-gray-300 text-sm sm:text-base" data-i18n="timeline1_desc">Concluí o curso técnico em Desenvolvimento de Sistemas no SENAI, adquirindo conhecimentos fundamentais em programação, desenvolvimento web e boas práticas de software.</p>
                             </div>
                             
                             <div class="hidden md:flex items-center justify-center">
@@ -744,11 +752,9 @@
                         <!-- Timeline Item 2 -->
                         <div class="flex flex-col md:flex-row-reverse reveal-element" data-delay="200">
                             <div class="md:w-1/2 md:pl-12 mb-8 md:mb-0">
-                                <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-purple/20 border border-neon-purple/30 text-neon-purple mb-2">
-                                    2024
-                                </span>
-                                <h3 class="text-lg sm:text-xl md:text-2xl font-bold font-orbitron text-white mb-2">Desenvolvedor Full Stack Freelancer</h3>
-                                <p class="text-gray-300">Atuo como freelancer no desenvolvimento de soluções web personalizadas, com foco na criação de sites responsivos, otimização de performance e experiência do usuário. Tenho experiência em diversas tecnologias, como HTML, CSS, JavaScript, PHP, e frameworks modernos como React.</p>
+                                <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-purple/20 border border-neon-purple/30 text-neon-purple mb-2" data-i18n="timeline2_date">2024</span>
+                                <h3 class="text-lg sm:text-xl md:text-2xl font-bold font-orbitron text-white mb-2" data-i18n="timeline2_title">Desenvolvedor Full Stack Freelancer</h3>
+                                <p class="text-gray-300" data-i18n="timeline2_desc">Atuo como freelancer no desenvolvimento de soluções web personalizadas, com foco na criação de sites responsivos, otimização de performance e experiência do usuário. Tenho experiência em diversas tecnologias, como HTML, CSS, JavaScript, PHP, e frameworks modernos como React.</p>
                             </div>
                             
                             <div class="hidden md:flex items-center justify-center">
@@ -763,11 +769,9 @@
                         <!-- Timeline Item 3 -->
                         <div class="flex flex-col md:flex-row reveal-element" data-delay="300">
                             <div class="md:w-1/2 md:text-right md:pr-6 sm:pr-8 md:pr-12 mb-6 sm:mb-8 md:mb-0">
-                                <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-blue/20 border border-neon-blue/30 text-neon-blue mb-2">
-                                    2024
-                                </span>
-                                <h3 class="text-lg sm:text-xl md:text-2xl font-bold font-orbitron text-white mb-2">Projeto Vann</h3>
-                                <p class="text-gray-300">Liderança no desenvolvimento do projeto Vann, selecionado entre os 16 melhores do SENAI e apresentado no evento Senai para o Mundo.</p>
+                                <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-blue/20 border border-neon-blue/30 text-neon-blue mb-2" data-i18n="timeline3_date">2024</span>
+                                <h3 class="text-lg sm:text-xl md:text-2xl font-bold font-orbitron text-white mb-2" data-i18n="timeline3_title">Projeto Vann</h3>
+                                <p class="text-gray-300" data-i18n="timeline3_desc">Liderança no desenvolvimento do projeto Vann, selecionado entre os 16 melhores do SENAI e apresentado no evento Senai para o Mundo.</p>
                             </div>
                             
                             <div class="hidden md:flex items-center justify-center">
@@ -781,24 +785,13 @@
                         <!-- Timeline Item 4 -->
                         <div class="flex flex-col md:flex-row-reverse reveal-element" data-delay="400">
                             <div class="md:w-1/2 md:pl-12 mb-8 md:mb-0">
-                                <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-purple/20 border border-neon-purple/30 text-neon-purple mb-2">
-                                    2025
-                                </span>
-                                <h3 class="text-lg sm:text-xl md:text-2xl font-bold font-orbitron text-white mb-2">Estágio de Desenvolvimento Web</h3>
-                                <p class="text-gray-300">Atuei como estagiário em desenvolvimento web, com foco em:</p>
+                                <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-purple/20 border border-neon-purple/30 text-neon-purple mb-2" data-i18n="timeline4_date">2025</span>
+                                <h3 class="text-lg sm:text-xl md:text-2xl font-bold font-orbitron text-white mb-2" data-i18n="timeline4_title">Estágio de Desenvolvimento Web</h3>
+                                <p class="text-gray-300" data-i18n="timeline4_desc">Atuei como estagiário em desenvolvimento web, com foco em:</p>
                                 <ul class="mt-4 space-y-2">
-                                    <li class="text-gray-300 flex items-start gap-2">
-                                        <span class="text-neon-purple mt-1">•</span>
-                                        <span>Desenvolvimento Front-end: Criação de interfaces dinâmicas e responsivas utilizando Angular, React, Tailwind, Bootstrap, HTML, CSS e JavaScript.</span>
-                                    </li>
-                                    <li class="text-gray-300 flex items-start gap-2">
-                                        <span class="text-neon-purple mt-1">•</span>
-                                        <span>Desenvolvimento Back-end: MVC, integração e criação de APIs RESTful, Laravel e PHP.</span>
-                                    </li>
-                                    <li class="text-gray-300 flex items-start gap-2">
-                                        <span class="text-neon-purple mt-1">•</span>
-                                        <span>Manutenção e Otimização: Correção de bugs e melhorias de performance.</span>
-                                    </li>
+                                    <li class="text-gray-300 flex items-start gap-2"><span class="text-neon-purple mt-1">•</span><span data-i18n="timeline4_list1">Desenvolvimento Front-end: Criação de interfaces dinâmicas e responsivas utilizando Angular, React, Tailwind, Bootstrap, HTML, CSS e JavaScript.</span></li>
+                                    <li class="text-gray-300 flex items-start gap-2"><span class="text-neon-purple mt-1">•</span><span data-i18n="timeline4_list2">Desenvolvimento Back-end: MVC, integração e criação de APIs RESTful, Laravel e PHP.</span></li>
+                                    <li class="text-gray-300 flex items-start gap-2"><span class="text-neon-purple mt-1">•</span><span data-i18n="timeline4_list3">Manutenção e Otimização: Correção de bugs e melhorias de performance.</span></li>
                                 </ul>
                             </div>
                             
@@ -814,11 +807,9 @@
                         <!-- Timeline Item 5 -->
                         <div class="flex flex-col md:flex-row reveal-element" data-delay="500">
                             <div class="md:w-1/2 md:text-right md:pr-6 sm:pr-8 md:pr-12 mb-6 sm:mb-8 md:mb-0">
-                                <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-blue/20 border border-neon-blue/30 text-neon-blue mb-2">
-                                    2025
-                                </span>
-                                <h3 class="text-lg sm:text-xl md:text-2xl font-bold font-orbitron text-white mb-2">Ensino Superior: Análise e Desenvolvimento de Sistemas</h3>
-                                <p class="text-gray-300">Concluí o curso superior em Análise e Desenvolvimento de Sistemas, aprofundando meus conhecimentos em desenvolvimento de software, arquitetura de sistemas e tecnologias modernas.</p>
+                                <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-blue/20 border border-neon-blue/30 text-neon-blue mb-2" data-i18n="timeline5_date">2025</span>
+                                <h3 class="text-lg sm:text-xl md:text-2xl font-bold font-orbitron text-white mb-2" data-i18n="timeline5_title">Ensino Superior: Análise e Desenvolvimento de Sistemas</h3>
+                                <p class="text-gray-300" data-i18n="timeline5_desc">Concluí o curso superior em Análise e Desenvolvimento de Sistemas, aprofundando meus conhecimentos em desenvolvimento de software, arquitetura de sistemas e tecnologias modernas.</p>
                             </div>
                             
                             <div class="hidden md:flex items-center justify-center">
@@ -833,11 +824,9 @@
                         <!-- Timeline Item 6 - New Entry -->
                         <div class="flex flex-col md:flex-row-reverse reveal-element" data-delay="600">
                             <div class="md:w-1/2 md:pl-12 mb-8 md:mb-0">
-                                <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-purple/20 border border-neon-purple/30 text-neon-purple mb-2">
-                                    2025
-                                </span>
-                                <h3 class="text-lg sm:text-xl md:text-2xl font-bold font-orbitron text-white mb-2">Desenvolvedor Full Stack Junior</h3>
-                                <p class="text-gray-300 mb-4">Atuação como desenvolvedor Full Stack Junior com foco em desenvolvimento web completo e colaboração em equipe.</p>
+                                <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-neon-purple/20 border border-neon-purple/30 text-neon-purple mb-2" data-i18n="timeline6_date">2025</span>
+                                <h3 class="text-lg sm:text-xl md:text-2xl font-bold font-orbitron text-white mb-2" data-i18n="timeline6_title">Desenvolvedor Full Stack Junior</h3>
+                                <p class="text-gray-300 mb-4" data-i18n="timeline6_desc">Atuação como desenvolvedor Full Stack Junior com foco em desenvolvimento web completo e colaboração em equipe.</p>
                                 
                                 <div class="space-y-4">
                                     <div class="flex items-start gap-2">
@@ -845,8 +834,8 @@
                                             <i class="fas fa-code text-xs text-white"></i>
                                         </div>
                                         <div>
-                                            <h4 class="font-medium text-white">Front-end</h4>
-                                            <p class="text-sm text-gray-400">Angular, React, Vue, HTML, CSS, JavaScript</p>
+                                            <h4 class="font-medium text-white" data-i18n="timeline6_feat1_title">Front-end</h4>
+                                            <p class="text-sm text-gray-400" data-i18n="timeline6_feat1_desc">Angular, React, Vue, HTML, CSS, JavaScript</p>
                                         </div>
                                     </div>
                                     
@@ -855,8 +844,8 @@
                                             <i class="fas fa-server text-xs text-white"></i>
                                         </div>
                                         <div>
-                                            <h4 class="font-medium text-white">Back-end</h4>
-                                            <p class="text-sm text-gray-400">PHP, Laravel, APIs RESTful</p>
+                                            <h4 class="font-medium text-white" data-i18n="timeline6_feat2_title">Back-end</h4>
+                                            <p class="text-sm text-gray-400" data-i18n="timeline6_feat2_desc">PHP, Laravel, APIs RESTful</p>
                                         </div>
                                     </div>
                                     
@@ -865,8 +854,8 @@
                                             <i class="fas fa-database text-xs text-white"></i>
                                         </div>
                                         <div>
-                                            <h4 class="font-medium text-white">Banco de Dados</h4>
-                                            <p class="text-sm text-gray-400">MySQL</p>
+                                            <h4 class="font-medium text-white" data-i18n="timeline6_feat3_title">Banco de Dados</h4>
+                                            <p class="text-sm text-gray-400" data-i18n="timeline6_feat3_desc">MySQL</p>
                                         </div>
                                     </div>
                                     
@@ -875,8 +864,8 @@
                                             <i class="fas fa-tasks text-xs text-white"></i>
                                         </div>
                                         <div>
-                                            <h4 class="font-medium text-white">Metodologias e Ferramentas</h4>
-                                            <p class="text-sm text-gray-400">Scrum, Kanban, Git, GitHub</p>
+                                            <h4 class="font-medium text-white" data-i18n="timeline6_feat4_title">Metodologias e Ferramentas</h4>
+                                            <p class="text-sm text-gray-400" data-i18n="timeline6_feat4_desc">Scrum, Kanban, Git, GitHub</p>
                                         </div>
                                     </div>
                                     
@@ -885,8 +874,8 @@
                                             <i class="fas fa-mobile-alt text-xs text-white"></i>
                                         </div>
                                         <div>
-                                            <h4 class="font-medium text-white">Responsividade e UX/UI</h4>
-                                            <p class="text-sm text-gray-400">Design adaptável a múltiplos dispositivos</p>
+                                            <h4 class="font-medium text-white" data-i18n="timeline6_feat5_title">Responsividade e UX/UI</h4>
+                                            <p class="text-sm text-gray-400" data-i18n="timeline6_feat5_desc">Design adaptável a múltiplos dispositivos</p>
                                         </div>
                                     </div>
                                     
@@ -895,8 +884,8 @@
                                             <i class="fas fa-users text-xs text-white"></i>
                                         </div>
                                         <div>
-                                            <h4 class="font-medium text-white">Colaboração</h4>
-                                            <p class="text-sm text-gray-400">Trabalho em equipe ágil, priorização e organização de tarefas</p>
+                                            <h4 class="font-medium text-white" data-i18n="timeline6_feat6_title">Colaboração</h4>
+                                            <p class="text-sm text-gray-400" data-i18n="timeline6_feat6_desc">Trabalho em equipe ágil, priorização e organização de tarefas</p>
                                         </div>
                                     </div>
                                 </div>
@@ -919,9 +908,7 @@
         <section id="certifications" class="py-20 relative z-10">
             <div class="max-w-6xl mx-auto px-4">
                 <div class="text-center mb-16 reveal-element">
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">
-                        Certificações
-                    </h2>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple" data-i18n="nav_certificacoes">Certificações</h2>
                     <div class="mt-2 h-1 w-20 bg-gradient-to-r from-neon-blue to-neon-purple mx-auto rounded-full"></div>
                 </div>
                 
@@ -1127,9 +1114,7 @@
         <section id="contact" class="py-20 bg-space-blue/30 relative z-10">
             <div class="max-w-6xl mx-auto px-4">
                 <div class="text-center mb-16 reveal-element">
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">
-                        Contato
-                    </h2>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple" data-i18n="nav_contato">Contato</h2>
                     <div class="mt-2 h-1 w-20 bg-gradient-to-r from-neon-blue to-neon-purple mx-auto rounded-full"></div>
                 </div>
                 
@@ -1139,9 +1124,7 @@
                             <div class="absolute inset-0 bg-gradient-to-r from-neon-blue/10 to-neon-purple/10"></div>
                             <div class="relative">
                                 <h3 class="text-2xl font-bold font-orbitron text-white mb-6">Vamos criar algo extraordinário juntos?</h3>
-                                <p class="text-gray-300 mb-8">
-                                    Estou sempre aberto a novos projetos e oportunidades. Se você tem uma ideia ou projeto em mente, entre em contato!
-                                </p>
+                                <p class="text-gray-300 mb-8" data-i18n="contato_frase">Estou sempre aberto a novos projetos e oportunidades. Se você tem uma ideia ou projeto em mente, entre em contato!</p>
                                 
                                 <div class="space-y-6">
                                     <div class="flex items-center gap-4">
@@ -1182,11 +1165,11 @@
                         <div class="relative overflow-hidden rounded-xl border border-neon-purple/20 bg-black/50 backdrop-blur-sm p-4 sm:p-6 md:p-8">
                             <div class="absolute inset-0 bg-gradient-to-r from-neon-blue/10 to-neon-purple/10"></div>
                             <div class="relative">
-                                <h3 class="text-2xl font-bold font-orbitron text-white mb-6">Envie uma mensagem</h3>
+                                <h3 class="text-2xl font-bold font-orbitron text-white mb-6" data-i18n="envie_mensagem">Envie uma mensagem</h3>
                                 
                                 <form class="space-y-6" id="contact-form" onsubmit="handleSubmit(event)">
                                     <div>
-                                        <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Nome</label>
+                                        <label for="name" class="block text-sm font-medium text-gray-300 mb-1" data-i18n="nome">Nome</label>
                                         <input 
                                             type="text" 
                                             id="name" 
@@ -1197,7 +1180,7 @@
                                     </div>
                                     
                                     <div>
-                                        <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Mensagem</label>
+                                        <label for="message" class="block text-sm font-medium text-gray-300 mb-1" data-i18n="mensagem">Mensagem</label>
                                         <textarea 
                                             id="message" 
                                             rows="4"
@@ -1210,6 +1193,7 @@
                                     <button 
                                         type="submit"
                                         class="w-full px-4 sm:px-6 py-2 sm:py-3 rounded-lg bg-gradient-to-r from-neon-blue to-neon-purple text-white font-medium hover:shadow-glow transition-all duration-300 text-sm sm:text-base"
+                                        data-i18n="enviar_mensagem"
                                     >
                                         Enviar Mensagem
                                     </button>
@@ -1226,7 +1210,7 @@
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col md:flex-row justify-between items-center">
                     <div class="mb-4 md:mb-0">
-                        <p class="text-gray-400">© 2025 Desenvolvido por Guilherme Yan.</p>
+                        <p class="text-gray-400" data-i18n="footer">© 2025 Desenvolvido por Guilherme Yan.</p>
                     </div>
                     
                     <div class="flex space-x-6">
@@ -1277,6 +1261,7 @@
             <i class="fas fa-arrow-up text-white"></i>
         </button>
 
+        <script src="i18n.js"></script>
         <script src="script.js"></script>
         <script>
         function handleSubmit(event) {
@@ -1292,6 +1277,11 @@
             // Redireciona para o WhatsApp
             window.open(`https://api.whatsapp.com/send/?phone=5512991293155&text=${encodedMessage}`, '_blank');
         }
+        </script>
+        <script>
+        document.getElementById('lang-selector').addEventListener('change', function() {
+            setLanguage(this.value);
+        });
         </script>
     </body>
     </html>
